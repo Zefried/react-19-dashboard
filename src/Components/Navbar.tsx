@@ -1,0 +1,85 @@
+import { Bell, Moon, Sun, PanelLeft, User, LogOut } from "lucide-react";
+import "./Style/Navbar.css";
+
+type NavbarProps = {
+  active: string | null;
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setDark: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowNotif: React.Dispatch<React.SetStateAction<boolean>>;
+  dark: boolean;
+  showNotif: boolean;
+  showProfile: boolean;
+  setShowProfile: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const Navbar = ({
+  active,
+  setSidebarOpen,
+  dark,
+  setDark,
+  showNotif,
+  setShowNotif,
+  showProfile,
+  setShowProfile
+}: NavbarProps) => {
+  return (
+    <div
+      className={`navbar ${dark ? "dark" : ""}`}
+      style={{ color: dark ? "white" : "black" }}
+    >
+      {/* LEFT */}
+      <div className="flex items-center gap-3">
+        <PanelLeft
+          size={18}
+          className="cursor-pointer"
+          onClick={() => setSidebarOpen(prev => !prev)}
+        />
+        <span className="nav-title">{active}</span>
+      </div>
+
+      {/* RIGHT */}
+      <div className="flex items-center gap-4">
+        <button
+          onClick={() => setDark(prev => !prev)}
+          className="icon-btn"
+        >
+          {dark ? <Sun size={15} /> : <Moon size={15} />}
+        </button>
+
+        <Bell
+          size={18}
+          className="icon-btn"
+          onClick={() => setShowNotif(prev => !prev)}
+        />
+
+        {showNotif && (
+          <div className="notif-box">
+            <h3 className="font-semibold mb-2">Notifications</h3>
+            <p className="text-sm opacity-70">No new notifications</p>
+          </div>
+        )}
+
+        {/* AVATAR */}
+        <div
+          className="avatar cursor-pointer"
+          onClick={() => setShowProfile(prev => !prev)}
+        />
+
+        {/* PROFILE DROPDOWN */}
+        {showProfile && (
+          <div className="profile-box">
+            <div className="profile-item">
+              <User size={16} />
+              <span>Profile</span>
+            </div>
+            <div className="profile-item">
+              <LogOut size={16} />
+              <span>Logout</span>
+            </div>
+          </div>
+        )}
+      
+      </div>
+    </div>
+  );
+};
