@@ -53,6 +53,11 @@
   transition: all 0.2s ease;
 }
 
+.extra-margin{
+    margin-right: 10px;
+    gap: 15px;
+}
+
 .icon-btn:hover {
   background: #f3f4f6;
 }

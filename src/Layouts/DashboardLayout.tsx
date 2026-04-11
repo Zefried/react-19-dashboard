@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Sidebar } from "../Components/Sidebar";
 import { Navbar } from "../Components/Navbar";
-import {menu} from "../Components/Menu";
+import { menus } from "../Components/Menu";
 import '../Components/Style/Dashboard.css';
 
 
 export const DashboardLayout  = () => {
+  // render menu based on role
+  const role = "admin";
 
+  const menu = menus[role];
   const [active,setActive] = useState<string | null>("Home");
   const [sidebarOpen,setSidebarOpen] = useState<boolean>(true);
   const [openMenu,setOpenMenu] = useState<string | null>(null);

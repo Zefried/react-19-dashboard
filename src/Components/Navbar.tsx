@@ -1,5 +1,8 @@
 import { Bell, Moon, Sun, PanelLeft, User, LogOut } from "lucide-react";
 import "./Style/Navbar.css";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 type NavbarProps = {
   active: string | null;
@@ -22,6 +25,10 @@ export const Navbar = ({
   showProfile,
   setShowProfile
 }: NavbarProps) => {
+
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate();
+
   return (
     <div
       className={`navbar ${dark ? "dark" : ""}`}
@@ -38,7 +45,7 @@ export const Navbar = ({
       </div>
 
       {/* RIGHT */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 extra-margin">
         <button
           onClick={() => setDark(prev => !prev)}
           className="icon-btn"
@@ -46,18 +53,20 @@ export const Navbar = ({
           {dark ? <Sun size={15} /> : <Moon size={15} />}
         </button>
 
-        <Bell
-          size={18}
-          className="icon-btn"
-          onClick={() => setShowNotif(prev => !prev)}
-        />
+        <div className="relative">
+          <Bell
+            size={18}
+            className="icon-btn-bell"
+            onClick={() => setShowNotif(prev => !prev)}
+          />
 
-        {showNotif && (
-          <div className="notif-box">
-            <h3 className="font-semibold mb-2">Notifications</h3>
-            <p className="text-sm opacity-70">No new notifications</p>
-          </div>
-        )}
+          {showNotif && (
+            <div className="notif-box">
+              <h3 className="font-semibold mb-2">Notifications</h3>
+              <p className="text-sm opacity-70">No new notifications</p>
+            </div>
+          )}
+        </div>
 
         {/* AVATAR */}
         <div
@@ -72,7 +81,13 @@ export const Navbar = ({
               <User size={16} />
               <span>Profile</span>
             </div>
-            <div className="profile-item">
+            <div
+              className="profile-item"
+              onClick={() => {
+                auth?.logout();        
+                navigate("/login");  
+              }}
+            >
               <LogOut size={16} />
               <span>Logout</span>
             </div>
