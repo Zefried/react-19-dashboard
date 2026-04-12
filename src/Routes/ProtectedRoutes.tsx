@@ -13,15 +13,18 @@ export const ProtectedRoute = ({
   const authContext = useContext(AuthContext);
   const role = authContext?.user?.role;
 
-  // Not logged in
-  if (!authContext || !authContext.isAuthenticated) {
+  // preventing flicker
+  if (!authContext || authContext.isLoading) return null;
+
+  // not logged in
+  if (!authContext.isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
 
-  // Logged in but not allowed
+  // role check
   if (allowedRoles && (!role || !allowedRoles.includes(role))) {
     return <Navigate to="/unauthorized" replace />;
   }
-  
+
   return children;
 };

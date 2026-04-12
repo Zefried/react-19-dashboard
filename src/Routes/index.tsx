@@ -3,6 +3,8 @@ import { DashboardLayout } from "../Layouts/DashboardLayout";
 import { Login } from "../Pages/Auth/Login";
 import { ProtectedRoute } from "./ProtectedRoutes";
 import { Unauthorized } from "../Pages/Auth/Unauthorized";
+import { DashboardHome } from "../Pages/Panels/DashboardHome";
+import { Rough } from "../Test/Rough";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +22,22 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <ProtectedRoute allowedRoles={['admin', 'subadmin', 'department']}>
+      <ProtectedRoute allowedRoles={['admin','subadmin','department']}>
         <DashboardLayout />
       </ProtectedRoute>
-    )
+    ),
+    children: [
+      {
+        index: true,     
+        element: <DashboardHome />,
+      },
+      {
+        path: "test",
+        element: <Rough/>
+      },
+    ],
   }
+  
 ]);
 
 export default router;

@@ -43,10 +43,10 @@ export const Login = () => {
     const { login } = auth;
 
     useEffect(() => {
-      if (auth?.isAuthenticated) {
+      if (auth?.isAuthenticated && location.pathname === "/login") {
         navigate("/dashboard");
       }
-    }, [auth?.isAuthenticated, navigate]);
+    }, [auth?.isAuthenticated, navigate, location]);
 
 
     const [showPassword, setShowPassword] = useState<boolean>(false);

@@ -12,6 +12,7 @@ type AuthContextType = {
   token: string | null;
   user: User | null;
   isAuthenticated: boolean;
+  isLoading: boolean; // prevent flickers 
   login: (token: string, user: User) => void;
   logout: () => void;
 };
@@ -23,7 +24,8 @@ export const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<any | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -36,9 +38,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (storedUser) {
       setUser(JSON.parse(storedUser)); // restore user
     }
+
+    setIsLoading(false);
   }, []);
 
-  const login = (token: string, user: any) => {
+  const login = (token: string, user: User) => {
     localStorage.setItem("token", token);
     localStorage.setItem("user", JSON.stringify(user));
     setToken(token);
@@ -58,6 +62,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         token,
         user,
         isAuthenticated: !!token,
+        isLoading,
         login,
         logout,
       }}

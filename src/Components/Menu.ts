@@ -26,7 +26,7 @@ export const menus = {
     { name: "Settings", icon: Settings }
   ],
 
-  subAdmin: [
+  subadmin: [
     { name: "Home", icon: Home },
     {
       name: "Users",

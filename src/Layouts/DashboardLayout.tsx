@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Sidebar } from "../Components/Sidebar";
 import { Navbar } from "../Components/Navbar";
 import { menus } from "../Components/Menu";
+import { Outlet } from "react-router-dom";
 import '../Components/Style/Dashboard.css';
 
 
 export const DashboardLayout  = () => {
   // render menu based on role
-  const role = "admin";
+  const role = "subadmin";
 
   const menu = menus[role];
   const [active,setActive] = useState<string | null>("Home");
@@ -50,6 +51,7 @@ export const DashboardLayout  = () => {
           {/* Main */}
           <div className="flex-1 p-6 overflow-y-auto main-div">
             Current Page: {active}
+            <Outlet />
           </div>
 
         </div>
