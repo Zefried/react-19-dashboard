@@ -1,0 +1,282 @@
+/* Base */
+/* .dp-container {
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f6fa, #eef1f7);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1a1a1a;
+} */
+
+/* LIGHT (default) */
+.dp-container {
+  padding: 24px;
+  min-height: 100%;
+  background: linear-gradient(135deg, #f5f6fa, #eef1f7);
+  color: #1a1a1a;
+}
+
+/* DARK MODE (inherits from layout) */
+.dark .dp-container {
+  background: linear-gradient(135deg, #0b1220, #111827);
+  color: #f9fafb;
+}
+
+/* Cards */
+.dp-card {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Dark cards */
+.dark .dp-card {
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Sections (optional tweak) */
+.dark .dp-section-title {
+  color: #e5e7eb;
+}
+
+/* List items */
+.dp-list-item {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+}
+
+/* Dark list */
+.dark .dp-list-item {
+  background: #111827;
+  border: 1px solid #1f2937;
+}
+
+/* Header */
+.dp-header {
+  margin-bottom: 20px;
+}
+
+.dp-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Cards */
+.dp-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dp-card {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.dp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Sections */
+.dp-section {
+  margin-bottom: 24px;
+}
+
+.dp-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Money stats */
+.dp-money-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dp-stat {
+  flex: 1;
+  min-width: 160px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Lists */
+.dp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dp-list-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  transition: 0.15s ease;
+}
+
+.dp-list-item:hover {
+    background: #fafcff;
+    color: black;
+}
+
+/* Actions */
+.dp-actions-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dp-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #6d28d9;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dp-btn:hover {
+  background: #5b21b6;
+  box-shadow: 0 6px 18px rgba(109, 40, 217, 0.3);
+}
+
+.dp-btn:active {
+  transform: scale(0.97);
+}
+
+/* Section header with controls */
+.dp-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Controls (date + button) */
+.dp-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Date input */
+.dp-date {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dp-date:hover {
+  border-color: #c7d2fe;
+}
+
+.dp-date:focus {
+  outline: none;
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.15);
+}
+
+/* Dark mode date */
+.dark .dp-date {
+  background: #111827;
+  border: 1px solid #1f2937;
+  color: #f9fafb;
+}
+
+/* View All button (link style) */
+.dp-link-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #6d28d9;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dp-link-btn:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* Dark mode link button */
+.dark .dp-link-btn {
+  color: #a78bfa;
+}
+
+.dark .dp-link-btn:hover {
+  background: rgba(167, 139, 250, 0.12);
+}
+
+/* Make list full width */
+.dp-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Header row */
+.dp-list-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.7;
+  padding: 6px 10px;
+}
+
+/* Rows */
+.dp-list-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  font-size: 13px;
+  line-height: 1.2; /* FIX spacing */
+}
+
+/* Dark mode */
+.dark .dp-list-item {
+  background: #111827;
+  border: 1px solid #1f2937;
+}
+
+/* Fix text spacing */
+.dp-list-item span {
+  white-space: nowrap;
+}
+
+.dp-card.clickable {
+  cursor: pointer;
+}
+
+.dp-card.clickable:hover {
+  transform: translateY(-4px);
+}

@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useState} from "react";
 import { Sidebar } from "../Components/Sidebar";
 import { Navbar } from "../Components/Navbar";
 import { menus } from "../Components/Menu";
 import { Outlet } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 import '../Components/Style/Dashboard.css';
 
 
 export const DashboardLayout  = () => {
   // render menu based on role
-  const role = "subadmin";
+    const auth = useContext(AuthContext);
+    if (!auth) return null;
+
+    const { user, isLoading } = auth;
+
+    if (isLoading) return null; // avoid flicker
+
+    const role = user?.role || "department"; // fallback
+
 
   const menu = menus[role];
   const [active,setActive] = useState<string | null>("Home");
@@ -21,36 +31,35 @@ export const DashboardLayout  = () => {
  
 
   return (
-    <div className={dark ? "dark":"default"}>
-      <div className="flex h-screen bg-gray-100 dark:bg-gray-900 dark:text-white relative">
+    <div className={dark ? "dark" : ""}>
+      <div className="flex h-screen relative app">
 
         {/* Sidebar */}
-           <Sidebar
-                menu={menu}
-                sidebarOpen={sidebarOpen}
-                openMenu={openMenu}
-                setOpenMenu={setOpenMenu}
-                setActive={setActive}
-                active={active} 
-            />
+        <Sidebar
+          menu={menu}
+          sidebarOpen={sidebarOpen}
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+          setActive={setActive}
+          active={active} 
+        />
 
         {/* Right */}
         <div className="flex flex-col flex-1">
-          {/* Navbar */}
-            <Navbar
-                active={active}
-                setSidebarOpen={setSidebarOpen}
-                dark={dark}
-                setDark={setDark}
-                showNotif={showNotif}
-                setShowNotif={setShowNotif}
-                showProfile={showProfile}
-                setShowProfile={setShowProfile}
-            />
+
+          <Navbar
+            active={active}
+            setSidebarOpen={setSidebarOpen}
+            dark={dark}
+            setDark={setDark}
+            showNotif={showNotif}
+            setShowNotif={setShowNotif}
+            showProfile={showProfile}
+            setShowProfile={setShowProfile}
+          />
 
           {/* Main */}
-          <div className="flex-1 p-6 overflow-y-auto main-div">
-            Current Page: {active}
+          <div className="flex-1 overflow-y-auto main-div">
             <Outlet />
           </div>
 

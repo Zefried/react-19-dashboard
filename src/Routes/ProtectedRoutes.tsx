@@ -1,19 +1,19 @@
 import { Navigate } from "react-router-dom";
-import type { JSX } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
+import type { ReactNode } from "react";
 
 export const ProtectedRoute = ({
   children,
   allowedRoles,
 }: {
-  children: JSX.Element;
+  children: ReactNode; // since we're wrapping other components
   allowedRoles?: string[];
 }) => {
   const authContext = useContext(AuthContext);
   const role = authContext?.user?.role;
 
-  // preventing flicker
+  // prevent flicker
   if (!authContext || authContext.isLoading) return null;
 
   // not logged in
@@ -26,5 +26,5 @@ export const ProtectedRoute = ({
     return <Navigate to="/unauthorized" replace />;
   }
 
-  return children;
+  return <>{children}</>; // safe render
 };

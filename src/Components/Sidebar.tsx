@@ -1,9 +1,11 @@
 import { ChevronDown } from "lucide-react";
 import "./Style/Sidebar.css";
+import { useNavigate } from "react-router-dom";
 
 type MenuItem = {
   name: string;
   icon: React.ElementType;
+  path?: string;
   children?: { name: string }[];
 };
 
@@ -24,6 +26,8 @@ export const Sidebar = ({
   setActive,
   active
 }: SidebarProps) => {
+    const navigate = useNavigate();
+
     return (
       <div className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
        
@@ -54,7 +58,10 @@ export const Sidebar = ({
                   onClick={() => {
                     if (item.children) {
                       setOpenMenu(isOpen ? null : item.name);
+                    } else if (item.path) {
+                      navigate(item.path); 
                     }
+
                     setActive(item.name);
                   }}
                   className={`menu-item ${isActive ? "active" : ""}`}

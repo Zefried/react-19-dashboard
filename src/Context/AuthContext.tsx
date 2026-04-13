@@ -3,20 +3,23 @@ import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
 
 
+type Role = "admin" | "subadmin" | "department";
+
 type User = {
-  role: string;
-  // later will add more
+  id: number;
+  name: string;
+  email: string;
+  role: Role;
 };
 
 type AuthContextType = {
   token: string | null;
   user: User | null;
   isAuthenticated: boolean;
-  isLoading: boolean; // prevent flickers 
+  isLoading: boolean;
   login: (token: string, user: User) => void;
   logout: () => void;
 };
-
 
 
 export const AuthContext = createContext<AuthContextType | null>(null);

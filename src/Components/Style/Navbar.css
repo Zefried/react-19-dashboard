@@ -27,12 +27,12 @@
 
 /* DARK MODE */
 .dark .navbar {
-    background: rgb(0 0 0 / 89%);
+    background: #0D1422;
 }
 
 .dark .main-div {
-  background: rgb(0 0 0 / 89%);
-  color: white;
+    background: #0D1422;
+    color: white;
 }
 
 .dark .navbar::after {
