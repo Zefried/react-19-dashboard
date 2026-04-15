@@ -1,0 +1,119 @@
+/* Container */
+.at-container {
+  padding: 24px;
+  max-width: 500px;
+}
+
+/* Header */
+.at-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.at-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Form */
+.at-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Field */
+.at-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.at-label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #6b7280;
+}
+
+/* Inputs */
+.at-input,
+.at-textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #fff;
+}
+
+.at-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.at-input:focus,
+.at-textarea:focus {
+  outline: none;
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.15);
+}
+
+/* Buttons */
+.at-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #6d28d9;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.at-btn:hover {
+  background: #5b21b6;
+  box-shadow: 0 6px 18px rgba(109, 40, 217, 0.3);
+}
+
+/* Link button */
+.at-link-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: #6d28d9;
+  cursor: pointer;
+}
+
+.at-link-btn:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* Actions */
+.at-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ================= DARK MODE ================= */
+
+.dark .at-container {
+  color: #e5e7eb;
+}
+
+.dark .at-input,
+.dark .at-textarea {
+  background: #111827;
+  border: 1px solid #1f2937;
+  color: #e5e7eb;
+}
+
+.dark .at-link-btn {
+  color: #a78bfa;
+}
+
+.dark .at-link-btn:hover {
+  background: rgba(167, 139, 250, 0.12);
+}

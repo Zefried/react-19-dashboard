@@ -9,16 +9,17 @@ import { TotalTransactions } from "../../Test/Department/Extra/TotalTransaction"
 import { TotalWorkerList } from "../../Test/Department/Extra/TotalWorkerList";
 import { AddTransaction } from "../../Test/Department/Extra/AddTransaction";
 import { AddAgent } from "../../Test/Department/Extra/AddAgent";
+import { ViewAgents } from "../../Test/Admin/Masters/Agent/ViewAgent";
+import { AgentProfile } from "../../Test/Department/Extra/AgentProfile";
 
 export const departmentRoutes = [
   {
-    path: "department",
     element: <Outlet />, // no global restriction
     children: [
       {
-        index: true,
+        path: "department", // this becomes dashboard home for dept users
         element: (
-          <ProtectedRoute allowedRoles={['department']}>
+          <ProtectedRoute allowedRoles={['department', 'admin']}>
             <DepartmentPanel />
           </ProtectedRoute>
         ),
@@ -26,7 +27,7 @@ export const departmentRoutes = [
       {
         path: "agents",
         element: (
-          <ProtectedRoute allowedRoles={['department']}>
+          <ProtectedRoute allowedRoles={['department', 'admin']}>
             <div>Department Agents</div>
           </ProtectedRoute>
         ),
@@ -34,7 +35,7 @@ export const departmentRoutes = [
       {
         path: "total-agents",
         element: (
-          <ProtectedRoute allowedRoles={['department']}>
+          <ProtectedRoute allowedRoles={['department', 'admin']}>
             <TotalAgent/>
           </ProtectedRoute>
         ),
@@ -42,7 +43,7 @@ export const departmentRoutes = [
       {
         path: "total-transactions",
         element: (
-          <ProtectedRoute allowedRoles={['department']}>
+          <ProtectedRoute allowedRoles={['department', 'admin']}>
             <TotalTransactions/>
           </ProtectedRoute>
         ),
@@ -50,15 +51,7 @@ export const departmentRoutes = [
       {
         path: "agent-detail",
         element: (
-          <ProtectedRoute allowedRoles={['department']}>
-            <AgentView/>
-          </ProtectedRoute>
-        ),
-      },
-       {
-        path: "agent-detail",
-        element: (
-          <ProtectedRoute allowedRoles={['department']}>
+          <ProtectedRoute allowedRoles={['department', 'admin']}>
             <AgentView/>
           </ProtectedRoute>
         ),
@@ -103,6 +96,25 @@ export const departmentRoutes = [
           </ProtectedRoute>
         ),
       },
+      {
+        path: "agent-profile",
+        element: (
+          <ProtectedRoute allowedRoles={['department', 'admin']}>
+            <AgentProfile/>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "view-agents",
+        element: (
+          <ProtectedRoute allowedRoles={['department', 'admin']}>
+            <ViewAgents/>
+          </ProtectedRoute>
+        ),
+      },
+
+
+
     ],
   },
 ];

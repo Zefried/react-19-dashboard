@@ -1,0 +1,165 @@
+/* Container */
+.vag-container {
+  padding: 24px;
+  background: #f9fafb;
+}
+
+.vag-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Table Wrapper */
+.vag-table-wrapper {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* Table */
+.vag-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Header */
+.vag-table thead {
+  background: rgba(109, 40, 217, 0.05);
+}
+
+.vag-table th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Body */
+.vag-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+/* Row Hover */
+.vag-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Column widths (IMPORTANT) */
+.vag-table th:nth-child(1) { width: 10%; }
+.vag-table th:nth-child(2) { width: 20%; }
+.vag-table th:nth-child(3) { width: 15%; }
+.vag-table th:nth-child(4) { width: 15%; }
+.vag-table th:nth-child(5) { width: 15%; }
+.vag-table th:nth-child(6) { width: 12%; }
+.vag-table th:nth-child(7) { width: 13%; }
+
+/* Status Badge */
+.vag-status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.vag-status.active {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.vag-status.pending {
+  background: rgba(234, 179, 8, 0.1);
+  color: #ca8a04;
+}
+
+.vag-status.inactive {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+/* Button */
+.vag-btn {
+  padding: 6px 12px;
+  background: transparent;
+  color: #6d28d9;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.vag-btn:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* DARK MODE */
+.dark .vag-container {
+  background: #0f172a;
+}
+
+.dark .vag-table-wrapper {
+  background: rgba(17, 24, 39, 0.6);
+  border-color: #1f2937;
+}
+
+.dark .vag-table td {
+  border-color: #1f2937;
+}
+
+.dark .vag-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Topbar */
+.vag-topbar {
+  margin-bottom: 12px;
+}
+
+.vag-search {
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  width: 260px;
+}
+
+.vag-search:focus {
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.15);
+}
+
+/* Pagination */
+.vag-pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.vag-page-btn {
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  color: #6d28d9;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.vag-page-btn:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+.vag-page-info {
+  font-size: 14px;
+}
+
+/* DARK */
+.dark .vag-search {
+  background: #111827;
+  border-color: #1f2937;
+  color: #e5e7eb;
+}

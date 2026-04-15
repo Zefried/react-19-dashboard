@@ -1,0 +1,132 @@
+/* Container */
+.advc-container {
+  padding: 24px;
+  background: #f9fafb;
+}
+
+/* Title */
+.advc-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Add Section */
+.advc-add-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Input */
+.advc-input {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  font-family: system-ui;
+  transition: 0.2s;
+}
+
+.advc-input:focus {
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.15);
+}
+
+/* Button */
+.advc-btn {
+  padding: 12px 18px;
+  background: #6d28d9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.advc-btn:hover {
+  background: #5b21b6;
+  transform: translateY(-1px);
+}
+
+/* Card */
+.advc-list-section {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* Header */
+.advc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.advc-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* View All */
+.advc-view-all {
+  font-size: 14px;
+  color: #6d28d9;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.advc-view-all:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* List */
+.advc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.advc-item {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.advc-item:last-child {
+  border-bottom: none;
+}
+
+/* DARK MODE */
+.dark .advc-container {
+  background: #0f172a;
+}
+
+.dark .advc-input {
+  background: #111827;
+  border-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.dark .advc-input:focus {
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.25);
+}
+
+.dark .advc-list-section {
+  background: rgba(17, 24, 39, 0.6);
+  border-color: #1f2937;
+}
+
+.dark .advc-item {
+  border-color: #1f2937;
+}
+
+.dark .advc-view-all:hover {
+  background: rgba(109, 40, 217, 0.15);
+}

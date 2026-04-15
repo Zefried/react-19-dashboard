@@ -1,0 +1,101 @@
+.ap-container {
+  padding: 24px;
+  background: #f9fafb;
+}
+
+.ap-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.ap-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.ap-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ap-center {
+  text-align: center;
+}
+
+.ap-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 10px;
+  overflow: hidden;
+}
+
+.ap-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ap-actions {
+  margin-top: 16px;
+}
+
+.ap-btn {
+  padding: 12px 20px;
+  background: #6d28d9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ap-btn:hover {
+  background: #5b21b6;
+}
+
+/* DARK */
+.dark .ap-container {
+  background: #0f172a;
+}
+
+.dark .ap-card {
+  background: rgba(17, 24, 39, 0.6);
+  border-color: #1f2937;
+  color: #e5e7eb;
+}
+
+/* MAIN GRID (2 cards per row) */
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* INNER GRID (2/2 layout inside card) */
+.ap-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .ap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

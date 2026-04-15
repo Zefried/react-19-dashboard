@@ -1,0 +1,151 @@
+/* Container */
+.ta-container {
+  padding: 24px;
+}
+
+/* Header */
+.ta-header {
+  margin-bottom: 16px;
+}
+
+.ta-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Controls */
+.ta-controls {
+  margin-bottom: 14px;
+}
+
+.ta-input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 13px;
+}
+
+.ta-input:focus {
+  outline: none;
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.15);
+}
+
+/* Table */
+.ta-table-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  background: white;
+}
+
+.ta-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Header */
+.ta-th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+/* Cells */
+.ta-td {
+  padding: 12px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Row */
+.ta-row {
+  transition: 0.15s ease;
+}
+
+.ta-row:hover {
+  background: #fafcff;
+}
+
+/* Column widths */
+.ta-table th:nth-child(1) { width: 120px; }
+.ta-table th:nth-child(2) { width: auto; }
+.ta-table th:nth-child(3) { width: 160px; }
+.ta-table th:nth-child(4) { width: 140px; }
+.ta-table th:nth-child(5) { width: 120px; }
+
+/* Badge */
+.ta-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.ta-badge-active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.ta-badge-disabled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Link button */
+.ta-link-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: #6d28d9;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ta-link-btn:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* DARK MODE */
+.dark .ta-container {
+  color: #e5e7eb;
+}
+
+.dark .ta-table-wrapper {
+  background: #111827;
+  border: 1px solid #1f2937;
+}
+
+.dark .ta-th {
+  background: #0f172a;
+  color: #94a3b8;
+  border-bottom: 1px solid #1f2937;
+}
+
+.dark .ta-td {
+  border-bottom: 1px solid #1f2937;
+}
+
+.dark .ta-row:hover {
+  background: #1e293b;
+}
+
+.dark .ta-input {
+  background: #111827;
+  border: 1px solid #1f2937;
+  color: #e5e7eb;
+}
+
+.dark .ta-link-btn {
+  color: #a78bfa;
+}
+
+.dark .ta-link-btn:hover {
+  background: rgba(167, 139, 250, 0.12);
+}

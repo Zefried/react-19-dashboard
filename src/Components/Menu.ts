@@ -4,10 +4,14 @@ import {
   Users,
   Settings,
   ShoppingCart,
-  PlusCircle,
   FileText,
   UsersRound,
   UserPlus,
+  Building,
+  Layers,
+  CreditCard,
+  Wallet,
+  BarChart3,
 } from "lucide-react";
 
 export type Role = "admin" | "subadmin" | "department";
@@ -16,7 +20,8 @@ export type MenuItem = {
   name: string;
   icon: React.ElementType;
   path?: string;
-  children?: { name: string; path?: string }[];
+  children?: { name: string; path?: string; icon: React.ElementType;}[];
+
 };
 
 /* ---------- ROLE MENUS ---------- */
@@ -24,18 +29,84 @@ export type MenuItem = {
 export const menus = {
   
   admin: [
-    { name: "Home", icon: Home },
+    { name: "Dashboard", icon: Home, path:"/dashboard"},
+
+    
     {
-      name: "Users",
-      icon: Users,
+      name: "Masters",
+      icon: Building,
       children: [
-        { name: "All Users" },
-        { name: "Admins" },
-        { name: "Banned" }
+        { name: "Category", icon: Layers, path: "/dashboard/category" },
+        { name: "Sub-category", icon: Layers, path: "/dashboard/sub-category" },
+        { name: "Add Agent", icon: UserPlus, path: "/dashboard/add-agent" },
+        { name: "View Agents", icon: UsersRound, path: "/dashboard/view-agents" }
       ]
     },
-    { name: "Orders", icon: ShoppingCart },
-    { name: "Settings", icon: Settings }
+
+     {
+      name: "Location Master",
+      icon: Building,
+      children: [
+        { name: "Category", icon: Layers, path: "/dashboard/category" },
+        { name: "Sub-category", icon: Layers, path: "/dashboard/sub-category" },
+        { name: "Add Agent", icon: UserPlus, path: "/dashboard/add-agent" },
+        { name: "View Agents", icon: UsersRound, path: "/dashboard/view-agents" }
+      ]
+    },
+
+    {
+      name: "Departments",
+      icon: Building,
+      children: [
+        { name: "All Departments" },
+        { name: "Create Department" }
+      ]
+    },
+
+    {
+      name: "Categories",
+      icon: Layers,
+      children: [
+        { name: "All Categories" },
+        { name: "Sub-categories" }
+      ]
+    },
+
+    {
+      name: "Payments",
+      icon: CreditCard,
+      children: [
+        { name: "Online Transactions" },
+        { name: "All Transactions" }
+      ]
+    },
+
+    {
+      name: "Commission",
+      icon: Wallet,
+      children: [
+        { name: "Set Commission" },
+        { name: "Release Commission" }
+      ]
+    },
+
+    {
+      name: "Reports",
+      icon: BarChart3,
+      children: [
+        { name: "Department Reports" },
+        { name: "Agent Reports" }
+      ]
+    },
+
+    {
+      name: "Controls",
+      icon: Settings,
+      children: [
+        { name: "Agent Limits" },
+        { name: "Enable / Disable Accounts" }
+      ]
+    }
   ],
 
   subadmin: [
@@ -50,6 +121,7 @@ export const menus = {
     { name: "Orders", icon: ShoppingCart }
   ],
 
+
   department: [
     {
     name: "Home",
@@ -57,35 +129,38 @@ export const menus = {
     path: "/dashboard/department",
     },
 
-    /* Agents */
-    {
-      name: "Agents",
-      icon: Users,
-      path: "/dashboard/department/total-agents",
-    },
     {
       name: "Add Agent",
       icon: UserPlus,
-      path: "/dashboard/department/add-agent",
+      path: "/dashboard/add-agent",
     },
+
+    {
+      name: "View Agent Profile",
+      icon: UserPlus,
+      path: "/dashboard/agent-profile",
+    },
+
+    /* Agents */
+    {
+      name: "All Agents",
+      icon: Users,
+      path: "/dashboard/total-agents",
+    },
+    
 
     /* Workers */
     {
-      name: "Workers",
+      name: "All Workers",
       icon: UsersRound,
-      path: "/dashboard/department/total-workers",
+      path: "/dashboard/total-workers",
     },
 
     /* Transactions */
     {
-      name: "Transactions",
+      name: "All Transactions",
       icon: FileText,
-      path: "/dashboard/department/total-transactions",
-    },
-    {
-      name: "Add Transaction",
-      icon: PlusCircle,
-      path: "/dashboard/department/add-transaction",
+      path: "/dashboard/total-transactions",
     },
   ]
 };

@@ -1,0 +1,145 @@
+/* Container */
+.advs-container {
+  padding: 24px;
+  background: #f9fafb;
+}
+
+/* Title */
+.advs-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Add Section */
+.advs-add-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+/* Select */
+.advs-select {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  font-family: system-ui;
+  transition: 0.2s;
+}
+
+.advs-select:focus {
+  border-color: #6d28d9;
+}
+
+/* Input */
+.advs-input {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  font-family: system-ui;
+  transition: 0.2s;
+}
+
+.advs-input:focus {
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.15);
+}
+
+/* Button */
+.advs-btn {
+  padding: 12px 18px;
+  background: #6d28d9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.advs-btn:hover {
+  background: #5b21b6;
+  transform: translateY(-1px);
+}
+
+/* Card */
+.advs-list-section {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* Header */
+.advs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.advs-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* View All */
+.advs-view-all {
+  font-size: 14px;
+  color: #6d28d9;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.advs-view-all:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* List */
+.advs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.advs-item {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.advs-item:last-child {
+  border-bottom: none;
+}
+
+/* DARK MODE */
+.dark .advs-container {
+  background: #0f172a;
+}
+
+.dark .advs-select,
+.dark .advs-input {
+  background: #111827;
+  border-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.dark .advs-list-section {
+  background: rgba(17, 24, 39, 0.6);
+  border-color: #1f2937;
+}
+
+.dark .advs-item {
+  border-color: #1f2937;
+}
+
+.dark .advs-view-all:hover {
+  background: rgba(109, 40, 217, 0.15);
+}

@@ -1,14 +1,16 @@
 import { Outlet } from "react-router-dom";
 import { ProtectedRoute } from "../ProtectedRoutes";
 import AdminPanel from "../../Pages/Panels/AdminPanel";
+import { AddViewCategory } from "../../Test/Admin/Masters/Category/AddViewCategory";
+import { AddViewSubcategory } from "../../Test/Admin/Masters/Category/AddViewSubCategory";
+
 
 export const adminRoutes = [
   {
-    path: "admin",
     element: <Outlet />, // no global restriction
     children: [
       {
-        index: true,
+        path: "admin", // this becomes dashboard home for admin users
         element: (
           <ProtectedRoute allowedRoles={['admin']}>
             <AdminPanel />
@@ -16,18 +18,18 @@ export const adminRoutes = [
         ),
       },
       {
-        path: "departments",
+        path: "/dashboard/category",
         element: (
           <ProtectedRoute allowedRoles={['admin', 'subadmin']}>
-            <div>Admin Departments</div>
+            <AddViewCategory />
           </ProtectedRoute>
         ),
       },
       {
-        path: "agents",
+        path: "/dashboard/sub-category",
         element: (
-          <ProtectedRoute allowedRoles={['admin']}>
-            <div>Admin Agents</div>
+          <ProtectedRoute allowedRoles={['admin', 'subadmin']}>
+            <AddViewSubcategory />
           </ProtectedRoute>
         ),
       },

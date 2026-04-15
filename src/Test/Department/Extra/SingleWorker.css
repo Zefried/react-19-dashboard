@@ -1,0 +1,137 @@
+/* Container */
+.idw-container {
+  padding: 24px;
+}
+
+/* Header */
+.idw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.idw-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.idw-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+/* Link button */
+.idw-link-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: #6d28d9;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.idw-link-btn:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* Card */
+.idw-card {
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Section title */
+.idw-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Info grid */
+.idw-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.idw-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.idw-value {
+  font-size: 14px;
+}
+
+/* Badge */
+.idw-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.idw-badge-approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.idw-badge-pending {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+/* Status text */
+.idw-status-text {
+  font-size: 14px;
+}
+
+/* Activity */
+.idw-activity {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.idw-activity-item {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+/* ================= DARK MODE ================= */
+
+.dark .idw-container {
+  color: #e5e7eb;
+}
+
+.dark .idw-card {
+  background: rgba(17,24,39,0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.dark .idw-activity-item {
+  background: #111827;
+  border: 1px solid #1f2937;
+}
+
+.dark .idw-link-btn {
+  color: #a78bfa;
+}
+
+.dark .idw-link-btn:hover {
+  background: rgba(167, 139, 250, 0.12);
+}

@@ -38,7 +38,7 @@ const DepartmentPanel = () => {
       <div className="dp-cards">
         <div 
             className="dp-card clickable"
-            onClick={() => navigate("/dashboard/department/total-agents")}
+            onClick={() => navigate("/dashboard/total-agents")}
         >
             <p>Total Agents</p>
             <h2>{stats.agents}</h2>
@@ -46,7 +46,7 @@ const DepartmentPanel = () => {
 
          <div 
             className="dp-card clickable"
-            onClick={() => navigate("/dashboard/department/total-workers")}
+            onClick={() => navigate("/dashboard/total-workers")}
         >
             <p>Total Workers</p>
             <h2>{stats.workers}</h2>
@@ -77,7 +77,7 @@ const DepartmentPanel = () => {
               onChange={(e) => setSelectedDate(e.target.value)}
             />
 
-            <button onClick={() => navigate("/dashboard/department/total-transactions")} className="dp-link-btn">View All</button>
+            <button onClick={() => navigate("/dashboard/total-transactions")} className="dp-link-btn">View All</button>
           </div>
         </div>
 
@@ -111,10 +111,10 @@ const DepartmentPanel = () => {
       <div className="dp-section">
         <h2 className="dp-section-title">Quick Actions</h2>
         <div className="dp-actions-list">
-          <button className="dp-btn" onClick={() => navigate("/dashboard/department/add-agent")}>
+          <button className="dp-btn" onClick={() => navigate("/dashboard/add-agent")}>
             + Create Agent
           </button>
-          <button className="dp-btn" onClick={() => navigate("/dashboard/department/add-transaction")}>
+          <button className="dp-btn" onClick={() => navigate("/dashboard/add-transaction")}>
             + Add Transaction
           </button>
         </div>

@@ -6,7 +6,11 @@ type MenuItem = {
   name: string;
   icon: React.ElementType;
   path?: string;
-  children?: { name: string }[];
+  children?: {
+    name: string;
+    path?: string;
+    icon?: React.ElementType;
+  }[];
 };
 
 type SidebarProps = {
@@ -82,15 +86,29 @@ export const Sidebar = ({
                 {/* Submenu */}
                 {item.children && isOpen && sidebarOpen && (
                   <div className="submenu">
-                    {item.children.map((sub) => (
-                      <div
-                        key={sub.name}
-                        onClick={() => setActive(sub.name)}
-                        className="submenu-item"
-                      >
-                        {sub.name}
-                      </div>
-                    ))}
+                    {item.children.map((sub) => {
+                      const SubIcon = sub.icon;
+
+                      return (
+                        <div
+                          key={sub.name}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (sub.path) navigate(sub.path);
+                            setActive(sub.name);
+                          }}
+                          className="submenu-item"
+                           style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",        
+                          }}
+                        >
+                          {SubIcon && <SubIcon size={15} />}  
+                          <span>{sub.name}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
 
