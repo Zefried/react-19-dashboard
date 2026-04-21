@@ -16,7 +16,7 @@ type AuthContextType = {
   token: string | null;
   user: User | null;
   isAuthenticated: boolean;
-  isLoading: boolean;
+  isLoading: boolean; 
   login: (token: string, user: User) => void;
   logout: () => void;
 };
@@ -25,7 +25,8 @@ type AuthContextType = {
 export const AuthContext = createContext<AuthContextType | null>(null);
 
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => { 
+  
   const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);

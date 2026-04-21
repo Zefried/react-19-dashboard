@@ -1,0 +1,300 @@
+/* ========== BASE ========== */
+.hrg-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #eee;
+  background: radial-gradient(circle at top, #1a0b2e, #0a0615);
+}
+
+/* GLASS CARD */
+.hrg-glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+
+/* ========== BUYBOX ========== */
+.hrg-buybox {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  padding: 24px;
+}
+
+.hrg-buybox-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hrg-image {
+    width: 100%;
+    max-width: 310px;
+    border-radius: 12px;
+}
+
+/* RIGHT */
+.hrg-buybox-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hrg-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.hrg-subtitle {
+  color: #cfc3ff;
+  font-size: 0.95rem;
+}
+
+/* PRICE */
+.hrg-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hrg-price {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hrg-mrp {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.hrg-discount {
+  color: #22c55e;
+  font-size: 0.9rem;
+}
+
+/* OPTIONS */
+.hrg-label {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+.hrg-size-options {
+  display: flex;
+  gap: 10px;
+}
+
+.hrg-size-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.hrg-size-btn.active {
+  background: linear-gradient(135deg, #7b2cff, #b06cff);
+  border: none;
+  color: white;
+}
+
+/* QTY */
+.hrg-qty-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hrg-qty-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* TOTAL */
+.hrg-total-box {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(123,44,255,0.25),
+    rgba(192,132,255,0.15)
+  );
+  border: 1px solid rgba(192,132,255,0.3);
+}
+
+.hrg-total-box p {
+  font-size: 0.9rem;
+  color: #cfc3ff;
+}
+
+.hrg-total-box span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* CTA */
+.hrg-buy-now {
+  margin:0px auto;
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  width: 40%;
+
+  background: linear-gradient(135deg, #7b2cff, #c084ff);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(123,44,255,0.4);
+}
+
+/* ========== CONTENT ========== */
+.hrg-content {
+  margin-top: 30px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* HEAD */
+.hrg-content-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hrg-content-subtitle {
+  color: #d1c4ff;
+}
+
+/* BLOCK */
+.hrg-block {
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.hrg-block-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+/* LIST */
+.hrg-list {
+  padding-left: 18px;
+}
+
+.hrg-list-item {
+  color: #e6ddff;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* ALERT */
+.hrg-alert {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255,80,80,0.08);
+  border: 1px solid rgba(255,80,80,0.25);
+  color: #ffb4b4;
+}
+
+/* FINAL */
+.hrg-final-title {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.hrg-final-text {
+  color: #ff9ecb;
+}
+
+.hrg-final-cta {
+  color: #c084ff;
+}
+
+/* VIDEO */
+.hrg-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.hrg-video {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+
+  .hrg-buybox {
+    grid-template-columns: 1fr;
+  }
+
+  .hrg-content {
+    padding: 20px;
+  }
+
+  .hrg-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hrg-video {
+    height: 220px;
+  }
+}
+
+
+/* STICKY BUY BAR */
+.hrg-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(10, 6, 21, 0.95);
+  backdrop-filter: blur(10px);
+
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.hrg-sticky-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.hrg-sticky-btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #7b2cff, #c084ff);
+  color: white;
+}

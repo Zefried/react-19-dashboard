@@ -9,8 +9,6 @@ import {
   UserPlus,
   Building,
   Layers,
-  CreditCard,
-  Wallet,
   BarChart3,
 } from "lucide-react";
 
@@ -42,54 +40,6 @@ export const menus = {
         { name: "View Agents", icon: UsersRound, path: "/dashboard/view-agents" }
       ]
     },
-
-     {
-      name: "Location Master",
-      icon: Building,
-      children: [
-        { name: "Category", icon: Layers, path: "/dashboard/category" },
-        { name: "Sub-category", icon: Layers, path: "/dashboard/sub-category" },
-        { name: "Add Agent", icon: UserPlus, path: "/dashboard/add-agent" },
-        { name: "View Agents", icon: UsersRound, path: "/dashboard/view-agents" }
-      ]
-    },
-
-    {
-      name: "Departments",
-      icon: Building,
-      children: [
-        { name: "All Departments" },
-        { name: "Create Department" }
-      ]
-    },
-
-    {
-      name: "Categories",
-      icon: Layers,
-      children: [
-        { name: "All Categories" },
-        { name: "Sub-categories" }
-      ]
-    },
-
-    {
-      name: "Payments",
-      icon: CreditCard,
-      children: [
-        { name: "Online Transactions" },
-        { name: "All Transactions" }
-      ]
-    },
-
-    {
-      name: "Commission",
-      icon: Wallet,
-      children: [
-        { name: "Set Commission" },
-        { name: "Release Commission" }
-      ]
-    },
-
     {
       name: "Reports",
       icon: BarChart3,

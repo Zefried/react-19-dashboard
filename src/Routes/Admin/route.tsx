@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { ProtectedRoute } from "../ProtectedRoutes";
-import AdminPanel from "../../Pages/Panels/AdminPanel";
 import { AddViewCategory } from "../../Test/Admin/Masters/Category/AddViewCategory";
 import { AddViewSubcategory } from "../../Test/Admin/Masters/Category/AddViewSubCategory";
+import AdminPanel from "../../Pages/Panels/AdminPanel";
+import { HerbalGel } from "../../Pages/LandingPages/HerbalGel";
+
 
 
 export const adminRoutes = [
@@ -18,7 +20,7 @@ export const adminRoutes = [
         ),
       },
       {
-        path: "/dashboard/category",
+        path: "/dashboard/order",
         element: (
           <ProtectedRoute allowedRoles={['admin', 'subadmin']}>
             <AddViewCategory />
@@ -30,6 +32,14 @@ export const adminRoutes = [
         element: (
           <ProtectedRoute allowedRoles={['admin', 'subadmin']}>
             <AddViewSubcategory />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/dashboard/herbal-gel",
+        element: (
+          <ProtectedRoute allowedRoles={['admin', 'subadmin']}>
+            <HerbalGel />
           </ProtectedRoute>
         ),
       },

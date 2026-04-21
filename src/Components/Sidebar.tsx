@@ -43,7 +43,7 @@ export const Sidebar = ({
               alt="Fixo Logo"
             />
           </div>
-          {sidebarOpen && <span className="brand-name">Fixzo Dash</span>}
+          {sidebarOpen && <span className="brand-name">Max Pest Control Dashboard</span>}
         </div>
 
         {/* nav section    */}
