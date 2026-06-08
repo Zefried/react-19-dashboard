@@ -4,7 +4,6 @@ import { Login } from "../Pages/Auth/Login";
 import { ProtectedRoute } from "./ProtectedRoutes";
 import { Unauthorized } from "../Pages/Auth/Unauthorized";
 import { DashboardHome } from "../Pages/Panels/DashboardHome";
-import { Rough } from "../Test/Rough";
 
 import { departmentRoutes } from "./Department/route";
 import { adminRoutes } from "./Admin/route";
@@ -34,11 +33,7 @@ const router = createBrowserRouter([
         index: true,
         element: <DashboardHome />,
       },
-      {
-        path: "test",
-        element: <Rough />,
-      },
-
+      
       // plug modular routes
       ...adminRoutes,
       ...departmentRoutes,
