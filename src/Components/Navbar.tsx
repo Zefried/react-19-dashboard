@@ -2,10 +2,9 @@ import { Bell, Moon, Sun, PanelLeft, User, LogOut } from "lucide-react";
 import "./Style/Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 type NavbarProps = {
-  active: string | null;
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setDark: React.Dispatch<React.SetStateAction<boolean>>;
   setShowNotif: React.Dispatch<React.SetStateAction<boolean>>;
@@ -16,18 +15,30 @@ type NavbarProps = {
 };
 
 export const Navbar = ({
-  active,
   setSidebarOpen,
   dark,
   setDark,
   showNotif,
   setShowNotif,
   showProfile,
-  setShowProfile
+  setShowProfile,
 }: NavbarProps) => {
-
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const pageTitles: Record<string, string> = {
+    "/dashboard": "Dashboard",
+    "/dashboard/locations": "Location",
+    "/dashboard/department": "Home",
+    "/dashboard/add-agent": "Add Agent",
+    "/dashboard/agent-profile": "Agent Profile",
+    "/dashboard/total-agents": "All Agents",
+    "/dashboard/total-workers": "All Workers",
+    "/dashboard/total-transactions": "All Transactions",
+  };
+
+  const pageTitle = pageTitles[location.pathname] || "Dashboard";
 
   return (
     <div
@@ -39,15 +50,15 @@ export const Navbar = ({
         <PanelLeft
           size={18}
           className="cursor-pointer"
-          onClick={() => setSidebarOpen(prev => !prev)}
+          onClick={() => setSidebarOpen((prev) => !prev)}
         />
-        <span className="nav-title">{active}</span>
+        <span className="nav-title">{pageTitle}</span>
       </div>
 
       {/* RIGHT */}
       <div className="flex items-center gap-4 extra-margin">
         <button
-          onClick={() => setDark(prev => !prev)}
+          onClick={() => setDark((prev) => !prev)}
           className="icon-btn"
         >
           {dark ? <Sun size={15} /> : <Moon size={15} />}
@@ -57,7 +68,7 @@ export const Navbar = ({
           <Bell
             size={18}
             className="icon-btn-bell"
-            onClick={() => setShowNotif(prev => !prev)}
+            onClick={() => setShowNotif((prev) => !prev)}
           />
 
           {showNotif && (
@@ -71,7 +82,7 @@ export const Navbar = ({
         {/* AVATAR */}
         <div
           className="avatar cursor-pointer"
-          onClick={() => setShowProfile(prev => !prev)}
+          onClick={() => setShowProfile((prev) => !prev)}
         />
 
         {/* PROFILE DROPDOWN */}
@@ -81,11 +92,12 @@ export const Navbar = ({
               <User size={16} />
               <span>Profile</span>
             </div>
+
             <div
               className="profile-item"
               onClick={() => {
-                auth?.logout();        
-                navigate("/login");  
+                auth?.logout();
+                navigate("/login");
               }}
             >
               <LogOut size={16} />
@@ -93,7 +105,6 @@ export const Navbar = ({
             </div>
           </div>
         )}
-      
       </div>
     </div>
   );

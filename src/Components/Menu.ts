@@ -1,4 +1,3 @@
-
 import {
   Home,
   Users,
@@ -18,65 +17,97 @@ export type MenuItem = {
   name: string;
   icon: React.ElementType;
   path?: string;
-  children?: { name: string; path?: string; icon: React.ElementType;}[];
-
+  children?: {
+    name: string;
+    path?: string;
+    icon: React.ElementType;
+  }[];
 };
 
-/* ---------- ROLE MENUS ---------- */
-
-export const menus = {
-  
+export const menus: Record<Role, MenuItem[]> = {
   admin: [
-    { name: "Dashboard", icon: Home, path:"/dashboard"},
+    {
+      name: "Dashboard",
+      icon: Home,
+      path: "/dashboard",
+    },
 
-    
     {
       name: "Masters",
       icon: Building,
       children: [
-        { name: "Category", icon: Layers, path: "/dashboard/category" },
-        { name: "Sub-category", icon: Layers, path: "/dashboard/sub-category" },
-        { name: "Add Agent", icon: UserPlus, path: "/dashboard/add-agent" },
-        { name: "View Agents", icon: UsersRound, path: "/dashboard/view-agents" }
-      ]
+        {
+          name: "Location",
+          icon: Layers,
+          path: "/dashboard/locations",
+        },
+      ],
     },
+
     {
       name: "Reports",
       icon: BarChart3,
       children: [
-        { name: "Department Reports" },
-        { name: "Agent Reports" }
-      ]
+        {
+          name: "Department Reports",
+          icon: FileText,
+          path: "/dashboard/department-reports",
+        },
+        {
+          name: "Agent Reports",
+          icon: FileText,
+          path: "/dashboard/agent-reports",
+        },
+      ],
     },
 
     {
       name: "Controls",
       icon: Settings,
       children: [
-        { name: "Agent Limits" },
-        { name: "Enable / Disable Accounts" }
-      ]
-    }
+        {
+          name: "Agent Limits",
+          icon: Settings,
+          path: "/dashboard/agent-limits",
+        },
+        {
+          name: "Enable / Disable Accounts",
+          icon: Settings,
+          path: "/dashboard/account-controls",
+        },
+      ],
+    },
   ],
 
   subadmin: [
-    { name: "Home", icon: Home },
+    {
+      name: "Home",
+      icon: Home,
+      path: "/dashboard/subadmin",
+    },
     {
       name: "Users",
       icon: Users,
       children: [
-        { name: "All Users" }
-      ]
+        {
+          name: "All Users",
+          icon: Users,
+          path: "/dashboard/subadmin/users",
+        },
+      ],
     },
-    { name: "Orders", icon: ShoppingCart }
+    {
+      name: "Orders",
+      icon: ShoppingCart,
+      path: "/dashboard/subadmin/orders",
+    },
   ],
-
 
   department: [
     {
-    name: "Home",
-    icon: Home,
-    path: "/dashboard/department",
+      name: "Home",
+      icon: Home,
+      path: "/dashboard/department",
     },
 
     {
@@ -91,26 +122,22 @@ export const menus = {
       path: "/dashboard/agent-profile",
     },
 
-    /* Agents */
     {
       name: "All Agents",
       icon: Users,
       path: "/dashboard/total-agents",
     },
-    
 
-    /* Workers */
     {
       name: "All Workers",
       icon: UsersRound,
       path: "/dashboard/total-workers",
     },
 
-    /* Transactions */
     {
       name: "All Transactions",
       icon: FileText,
       path: "/dashboard/total-transactions",
     },
-  ]
+  ],
 };

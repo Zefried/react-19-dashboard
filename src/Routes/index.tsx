@@ -4,7 +4,6 @@ import { Login } from "../Pages/Auth/Login";
 import { ProtectedRoute } from "./ProtectedRoutes";
 import { Unauthorized } from "../Pages/Auth/Unauthorized";
 import { DashboardHome } from "../Pages/Panels/DashboardHome";
-
 import { departmentRoutes } from "./Department/route";
 import { adminRoutes } from "./Admin/route";
 

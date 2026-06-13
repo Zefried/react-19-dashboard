@@ -3,26 +3,51 @@ import './Styles/AdminPanel.css';
 
 const AdminPanel = () => {
   const navigate = useNavigate();
+
   const stats = [
-    { title: "Total Orders", value: 120 },
-    { title: "Total Revenue", value: "₹45,000" },
-    { title: "Dispatched Orders", value: 60 },
-    { title: "Pending Orders", value: 30 },
-    { title: "Delivered Orders", value: 30 },
+    { title: "Total Restaurants", value: 125 },
+    { title: "Total Districts", value: 8 },
+    { title: "Active Restaurants", value: 110 },
+    { title: "Inactive Restaurants", value: 15 },
   ];
 
-  const orders = [
-    { id: "ORD001", customer: "Rahul", qty: 2, size: "M", status: "Pending" },
-    { id: "ORD002", customer: "Amit", qty: 1, size: "L", status: "Dispatched" },
-    { id: "ORD003", customer: "Sneha", qty: 3, size: "S", status: "Delivered" },
-    { id: "ORD004", customer: "Ravi", qty: 1, size: "M", status: "Pending" },
-    { id: "ORD005", customer: "Priya", qty: 2, size: "L", status: "Delivered" },
-    { id: "ORD006", customer: "Karan", qty: 1, size: "S", status: "Dispatched" },
+  const restaurants = [
+    {
+      id: "RST001",
+      name: "ABC Cafe",
+      state: "Jorhat",
+      branches: 3,
+      status: "Active",
+    },
+    {
+      id: "RST002",
+      name: "XYZ Bistro",
+      state: "Guwahati",
+      branches: 2,
+      status: "Inactive",
+    },
+    {
+      id: "RST003",
+      name: "Food Hub",
+      state: "Guwahati",
+      branches: 1,
+      status: "Active",
+    },
+    {
+      id: "RST004",
+      name: "Spice Kitchen",
+      state: "Nogaon",
+      branches: 4,
+      status: "Active",
+    },
+    {
+      id: "RST005",
+      name: "Urban Bites",
+      state: "Mirza",
+      branches: 2,
+      status: "Inactive",
+    },
   ];
-
-  // phone, address, transaction id, status left for individual orders 
-  // search and pagination needed 
-  // dark mode needed too 
 
   return (
     <div className="adp">
@@ -37,58 +62,60 @@ const AdminPanel = () => {
         ))}
       </div>
 
-      {/* Orders Section */}
+      {/* Restaurants Section */}
+      <div className="adp__orders">
+        <div className="links">
+          <h3 className="adp__section-title">Recent Restaurants</h3>
 
-<div className="adp__orders">
-  
-  <div className="links">
-    <h3 className="adp__section-title">Recent Orders</h3>
-    <h4 
-      className="adp-view-all-link"
-      onClick={() => navigate("/dashboard/orders")}
-    >
-      View All Orders →
-    </h4>
-  </div>
+          <h4
+            className="adp-view-all-link"
+            onClick={() => navigate('/dashboard/restaurants')}
+          >
+            View All Restaurants →
+          </h4>
+        </div>
 
+        <div className="adp-table-wrapper">
+          <table className="adp-table">
+            <thead>
+              <tr>
+                <th>Restaurant ID</th>
+                <th>Restaurant Name</th>
+                <th>Location</th>
+                <th>Branches</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
 
-  <div className="adp-table-wrapper">
-    <table className="adp-table">
-      <thead>
-        <tr>
-          <th>Order ID</th>
-          <th>Customer</th>
-          <th>Qty</th>
-          <th>Size</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
+            <tbody>
+              {restaurants.map((restaurant) => (
+                <tr key={restaurant.id}>
+                  <td className="adp-id">{restaurant.id}</td>
+                  <td>{restaurant.name}</td>
+                  <td>{restaurant.state}</td>
+                  <td>{restaurant.branches}</td>
 
-      <tbody>
-        {orders.map((order) => (
-          <tr key={order.id}>
-            <td className="adp-id">{order.id}</td>
-            <td>{order.customer}</td>
-            <td>{order.qty}</td>
-            <td>{order.size}</td>
+                  <td>
+                    <span
+                      className={`adp-status ${restaurant.status.toLowerCase()}`}
+                    >
+                      {restaurant.status}
+                    </span>
+                  </td>
 
-            <td>
-              <span className={`adp-status ${order.status.toLowerCase()}`}>
-                {order.status}
-              </span>
-            </td>
+                  <td>
+                    <button className="adp-view-btn">
+                      View
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
 
-            <td>
-              <button className="adp-view-btn">View</button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-</div>
-
+          </table>
+        </div>
+      </div>
     </div>
   );
 };

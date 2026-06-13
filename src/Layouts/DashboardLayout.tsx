@@ -1,54 +1,53 @@
-import { useState} from "react";
+import { useState, useContext } from "react";
 import { Sidebar } from "../Components/Sidebar";
 import { Navbar } from "../Components/Navbar";
 import { menus } from "../Components/Menu";
 import { Outlet } from "react-router-dom";
-import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import '../Components/Style/Dashboard.css';
+import "../Components/Style/Dashboard.css";
 
+export const DashboardLayout = () => {
+  const auth = useContext(AuthContext);
+  if (!auth) return null;
 
-export const DashboardLayout  = () => {
-  // render menu based on role
-    const auth = useContext(AuthContext);
-    if (!auth) return null;
+  const { user, isLoading } = auth;
 
-    const { user, isLoading } = auth;
+  if (isLoading) return null;
 
-    if (isLoading) return null; // avoid flicker
+  if (!user?.role) return null;
 
-    const role = user?.role || "department"; // fallback
+  const menu = menus[user.role];
 
-
-  const menu = menus[role];
-  const [active,setActive] = useState<string | null>("Home");
-  const [sidebarOpen,setSidebarOpen] = useState<boolean>(true);
-  const [openMenu,setOpenMenu] = useState<string | null>(null);
-  const [dark,setDark] = useState<boolean>(false);
-  const [showNotif,setShowNotif] = useState<boolean>(false);
-  const [showProfile,setShowProfile] = useState<boolean>(false);
-
- 
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [dark, setDark] = useState(false);
+  const [showNotif, setShowNotif] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   return (
     <div className={dark ? "dark" : ""}>
       <div className="flex h-screen relative app">
 
+        {/* Mobile Backdrop */}
+        {sidebarOpen && (
+          <div
+            className="sidebar-backdrop"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
+
         {/* Sidebar */}
         <Sidebar
           menu={menu}
+          setSidebarOpen={setSidebarOpen}
           sidebarOpen={sidebarOpen}
           openMenu={openMenu}
           setOpenMenu={setOpenMenu}
-          setActive={setActive}
-          active={active} 
         />
 
         {/* Right */}
         <div className="flex flex-col flex-1">
-
           <Navbar
-            active={active}
             setSidebarOpen={setSidebarOpen}
             dark={dark}
             setDark={setDark}
@@ -62,7 +61,6 @@ export const DashboardLayout  = () => {
           <div className="flex-1 overflow-y-auto main-div">
             <Outlet />
           </div>
-
         </div>
 
       </div>

@@ -273,3 +273,84 @@
 .adp-view-all-link:hover {
   letter-spacing: 0.2px;
 }
+
+/* =======================
+   DARK THEME
+======================= */
+
+.dark .adp {
+  background: #0f172a;
+}
+
+.dark .adp__card,
+.dark .adp__orders {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: none;
+}
+
+.dark .adp__card-title {
+  color: #94a3b8;
+}
+
+.dark .adp__card-value,
+.dark .adp__section-title,
+.dark .adp-id,
+.dark .adp-table td {
+  color: #f1f5f9;
+}
+
+.dark .adp-table thead {
+  background: #0f172a;
+}
+
+.dark .adp-table th {
+  color: #94a3b8;
+  border-bottom: 1px solid #334155;
+}
+
+.dark .adp-table td {
+  border-bottom: 1px solid #334155;
+}
+
+.dark .adp-table tbody tr:hover {
+  background: #273449;
+}
+
+.dark .adp-view-btn {
+  background: #4f46e5;
+}
+
+.dark .adp-view-btn:hover {
+  background: #4338ca;
+}
+
+.dark .adp-view-all-link {
+  color: #a78bfa;
+}
+
+.dark .adp-view-all-link:hover {
+  color: #c4b5fd;
+}
+
+/* Active / Inactive status */
+
+.adp-status.active {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.adp-status.inactive {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.dark .adp-status.active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.dark .adp-status.inactive {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
