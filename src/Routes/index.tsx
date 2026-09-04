@@ -4,8 +4,8 @@ import { Login } from "../Pages/Auth/Login";
 import { ProtectedRoute } from "./ProtectedRoutes";
 import { Unauthorized } from "../Pages/Auth/Unauthorized";
 import { DashboardHome } from "../Pages/Panels/DashboardHome";
-import { departmentRoutes } from "./Department/route";
 import { adminRoutes } from "./Admin/route";
+import { testRoutes } from "./Test/TestRoutes";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <ProtectedRoute allowedRoles={["admin", "subadmin", "department"]}>
+      <ProtectedRoute allowedRoles={["admin", "subadmin"]}>
         <DashboardLayout />
       </ProtectedRoute>
     ),
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       
       // plug modular routes
       ...adminRoutes,
-      ...departmentRoutes,
+      ...testRoutes,
     ],
   },
 ]);
