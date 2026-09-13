@@ -2,9 +2,6 @@ import axios from "axios";
 
 const api = axios.create({
     baseURL: `${import.meta.env.VITE_API_URL}/api`,
-    headers: {
-        "Content-Type": "application/json",
-    },
 });
 
 api.interceptors.request.use(
@@ -15,11 +12,14 @@ api.interceptors.request.use(
             config.headers.Authorization = `Bearer ${token}`;
         }
 
+        if (config.data instanceof FormData) {
+            // Let the browser add the multipart/form-data boundary.
+            delete config.headers["Content-Type"];
+        }
+
         return config;
     },
-    (error) => {
-        return Promise.reject(error);
-    }
+    (error) => Promise.reject(error)
 );
 
 export default api;
