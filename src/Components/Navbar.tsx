@@ -1,7 +1,7 @@
 import { Bell, Moon, Sun, PanelLeft, User, LogOut } from "lucide-react";
 import "./Style/Navbar.css";
 import { useContext } from "react";
-import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../Context/AuthContextValue";
 import { useNavigate, useLocation } from "react-router-dom";
 
 type NavbarProps = {

@@ -1,15 +1,19 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthContext";
+import { AuthContext } from "../../Context/AuthContextValue";
 import '../../Pages/Auth/Styles/Unauthorized.css'
 
 export const Unauthorized = () => {
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
+  const hasLoggedOut = useRef(false);
 
   useEffect(() => {
-    auth?.logout(); // clear token + user so that user can login again with different credentials if they want to
-  }, []);
+    if (!hasLoggedOut.current) {
+      hasLoggedOut.current = true;
+      auth?.logout();
+    }
+  }, [auth]);
 
   return (
     <div className="unauth-page">

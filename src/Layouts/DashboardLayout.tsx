@@ -3,11 +3,17 @@ import { Sidebar } from "../Components/Sidebar";
 import { Navbar } from "../Components/Navbar";
 import { menus } from "../Components/Menu";
 import { Outlet } from "react-router-dom";
-import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../Context/AuthContextValue";
 import "../Components/Style/Dashboard.css";
 
 export const DashboardLayout = () => {
   const auth = useContext(AuthContext);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [dark, setDark] = useState(false);
+  const [showNotif, setShowNotif] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+
   if (!auth) return null;
 
   const { user, isLoading } = auth;
@@ -17,12 +23,6 @@ export const DashboardLayout = () => {
   if (!user?.role) return null;
 
   const menu = menus[user.role];
-
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const [dark, setDark] = useState(false);
-  const [showNotif, setShowNotif] = useState(false);
-  const [showProfile, setShowProfile] = useState(false);
 
   return (
     <div className={dark ? "dark" : ""}>

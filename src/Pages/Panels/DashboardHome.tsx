@@ -2,7 +2,7 @@
 
 import { useContext, lazy, Suspense } from "react";
 import { Navigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthContext";
+import { AuthContext } from "../../Context/AuthContextValue";
 
 const AdminPanel = lazy(() => import("./AdminPanel"));
 

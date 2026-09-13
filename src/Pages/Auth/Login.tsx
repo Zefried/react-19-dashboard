@@ -3,8 +3,9 @@ import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import "./Styles/Login.css";
 import logo from "../../assets/logo/dash.png";
 import api from "../../api/axios";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthContext";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContextValue";
+import type { User } from "../../Context/AuthContextValue";
 import { useContext } from "react";
 
 interface LoginPayload {
@@ -16,7 +17,7 @@ interface LoginPayload {
 interface LoginResponse {
   status: boolean;
   data: {
-    user: any;
+    user: User;
     token: string;
   };
   code: number;
@@ -34,6 +35,7 @@ interface ApiError {
 
 export const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     
     const auth = useContext(AuthContext);
     if (!auth) {
@@ -46,7 +48,7 @@ export const Login = () => {
       if (auth?.isAuthenticated && location.pathname === "/login") {
         navigate("/dashboard");
       }
-    }, [auth?.isAuthenticated, navigate, location]);
+    }, [auth?.isAuthenticated, navigate, location.pathname]);
 
 
     const [showPassword, setShowPassword] = useState<boolean>(false);

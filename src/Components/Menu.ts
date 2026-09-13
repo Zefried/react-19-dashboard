@@ -44,39 +44,6 @@ export const menus: Record<Role, MenuItem[]> = {
       ],
     },
 
-    {
-      name: "Reports",
-      icon: BarChart3,
-      children: [
-        {
-          name: "Department Reports",
-          icon: FileText,
-          path: "/dashboard/department-reports",
-        },
-        {
-          name: "Agent Reports",
-          icon: FileText,
-          path: "/dashboard/agent-reports",
-        },
-      ],
-    },
-
-    {
-      name: "Controls",
-      icon: Settings,
-      children: [
-        {
-          name: "Agent Limits",
-          icon: Settings,
-          path: "/dashboard/agent-limits",
-        },
-        {
-          name: "Enable / Disable Accounts",
-          icon: Settings,
-          path: "/dashboard/account-controls",
-        },
-      ],
-    },
   ],
 
   subadmin: [

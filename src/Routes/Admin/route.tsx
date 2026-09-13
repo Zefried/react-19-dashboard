@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { ProtectedRoute } from "../ProtectedRoutes";
-import AdminPanel from "../../Pages/Panels/AdminPanel";
-
+import { AdminPanelRoute } from "./AdminPanelRoute";
 
 export const adminRoutes = [
   {
@@ -10,8 +9,8 @@ export const adminRoutes = [
       {
         path: "admin", // this becomes dashboard home for admin users
         element: (
-          <ProtectedRoute allowedRoles={['admin']}>
-            <AdminPanel />
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminPanelRoute />
           </ProtectedRoute>
         ),
       },
