@@ -1,155 +1,153 @@
-.navbar {
-  height: 56px;
-  padding: 0 24px;
+/* ===================================================
+   MODERN SLEEK NAVBAR STYLES
+=================================================== */
 
+.navbar {
+  height: 60px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #eef2f6;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 40;
 }
 
-/* custom bottom line (lower than edge) */
-.navbar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -4px; /* 👈 control gap here */
-  height: 1px;
-  background: #e5e7eb;
-}
-
-/* DARK MODE */
 .dark .navbar {
-    background: #0D1422;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom-color: #1e293b;
 }
 
-.dark .main-div {
-    background: #0D1422;
-    color: white;
-}
-
-.dark .navbar::after {
-  background: #1f2937;
-}
-
-/* title */
+/* Left Title & Breadcrumbs */
 .nav-title {
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 600;
+  color: #0f172a;
+  letter-spacing: -0.01em;
 }
 
-/* buttons */
+.dark .nav-title {
+  color: #f8fafc;
+}
+
+/* Icons on the right */
 .icon-btn {
-  padding: 8px;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  color: #64748b;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.extra-margin{
-    margin-right: 10px;
-    gap: 15px;
+  transition: all 0.15s ease;
+  background: transparent;
+  border: none;
 }
 
 .icon-btn:hover {
-  background: #f3f4f6;
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
 .dark .icon-btn:hover {
-  background: #1f2937;
+  background: #1e293b;
+  color: #f8fafc;
 }
 
-/* notification */
+.extra-margin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Notification Popup */
 .notif-box {
-  width: 280px;
+  width: 290px;
   padding: 16px;
-  border-radius: 12px;
-
+  border-radius: 14px;
   position: absolute;
-  top: 56px;
+  top: 64px;
   right: 24px;
-
-  background: white;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  animation: slideDown 0.2s ease forwards;
+  z-index: 60;
 }
 
 .dark .notif-box {
-  background: #111827;
-  border-color: #1f2937;
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
 }
 
-/* avatar */
+/* User Avatar & Dropdown */
 .avatar {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  transition: transform 0.15s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
 }
 
 .profile-box {
   position: absolute;
-  top: 60px;
+  top: 64px;
   right: 24px;
-
-  width: 180px;
-  padding: 8px;
-
-  border-radius: 12px;
-  background: white;
-  border: 1px solid #e5e7eb;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-
-  animation: fadeIn 0.15s ease;
+  width: 200px;
+  padding: 6px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.09);
+  animation: slideDown 0.2s ease forwards;
+  z-index: 60;
 }
 
 .dark .profile-box {
-  background: #111827;
-  border-color: #1f2937;
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
 }
 
-/* items */
 .profile-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-
-  padding: 8px 10px;
-  border-radius: 8px;
-
-  font-size: 14px;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
+.dark .profile-item {
+  color: #cbd5e1;
+}
+
 .profile-item:hover {
-  background: #f3f4f6;
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
 .dark .profile-item:hover {
-  background: #1f2937;
-}
-
-/* subtle animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background: #334155;
+  color: #ffffff;
 }

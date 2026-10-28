@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react";
 import "./Style/Sidebar.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo/dash.png";
+import { useEffect } from "react";
 
 type MenuItem = {
   name: string;
@@ -9,7 +10,7 @@ type MenuItem = {
   path?: string;
   children?: {
     name: string;
-    path?: string;
+    path: string;
     icon?: React.ElementType;
   }[];
 };
@@ -34,19 +35,35 @@ export const Sidebar = ({
 
   const isMobile = window.innerWidth < 768;
 
+  const currentFullUrl = location.pathname + (location.search || "");
+
+  // Auto-expand parent menu if one of its children is currently active
+  useEffect(() => {
+    menu.forEach((item) => {
+      if (item.children) {
+        const hasActiveChild = item.children.some(
+          (sub) => sub.path === currentFullUrl || (sub.path === "/dashboard?tab=overview" && currentFullUrl === "/dashboard")
+        );
+        if (hasActiveChild) {
+          setOpenMenu(item.name);
+        }
+      }
+    });
+  }, [currentFullUrl, menu, setOpenMenu]);
+
   return (
-    <div className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
-      {/* Logo section */}
+    <aside className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
+      {/* Brand Header */}
       <div className="sidebar-brand">
         <div className="brand-logo">
-          <img
-            src={logo}
-            alt="Logo"
-          />
+          <img src={logo} alt="Logo" />
         </div>
 
         {sidebarOpen && (
-          <span className="brand-name">Dashboard</span>
+          <div className="brand-info">
+            <span className="brand-name">Dashboard</span>
+            <span className="brand-badge">PRO</span>
+          </div>
         )}
       </div>
 
@@ -56,32 +73,40 @@ export const Sidebar = ({
           const Icon = item.icon;
           const isOpen = openMenu === item.name;
 
-          const isActive = item.path
-            ? location.pathname === item.path
-            : item.children?.some(
-                (sub) => location.pathname === sub.path
-              );
+          // Check if parent or child is active
+          const isDirectActive = item.path
+            ? (item.path === "/dashboard?tab=overview" && (currentFullUrl === "/dashboard" || currentFullUrl === "/dashboard?tab=overview")) ||
+            currentFullUrl === item.path
+            : false;
+
+          const hasActiveChild = item.children?.some(
+            (sub) => sub.path === currentFullUrl
+          );
+
+          const isActive = isDirectActive || hasActiveChild;
 
           return (
-            <div key={item.name}>
-              {/* Menu Item */}
+            <div key={item.name} className="menu-group">
+              {/* Parent Menu Item */}
               <div
                 onClick={() => {
                   if (item.children) {
                     setOpenMenu(isOpen ? null : item.name);
                   } else if (item.path) {
                     navigate(item.path);
-
                     if (isMobile) {
                       setSidebarOpen(false);
                     }
                   }
                 }}
                 className={`menu-item ${isActive ? "active" : ""}`}
+                title={!sidebarOpen ? item.name : undefined}
               >
                 <div className="menu-left">
-                  <Icon size={18} />
-                  {sidebarOpen && <span>{item.name}</span>}
+                  <div className="menu-icon-wrap">
+                    <Icon size={18} />
+                  </div>
+                  {sidebarOpen && <span className="menu-text">{item.name}</span>}
                 </div>
 
                 {item.children && sidebarOpen && (
@@ -92,39 +117,28 @@ export const Sidebar = ({
                 )}
               </div>
 
-              {/* Submenu */}
+              {/* Submenu Dropdown */}
               {item.children && isOpen && sidebarOpen && (
-                <div className="submenu">
+                <div className="submenu animate-slide-down">
                   {item.children.map((sub) => {
                     const SubIcon = sub.icon;
-                    const isSubActive =
-                      location.pathname === sub.path;
+                    const isSubActive = currentFullUrl === sub.path;
 
                     return (
                       <div
                         key={sub.name}
                         onClick={(e) => {
                           e.stopPropagation();
-
-                          if (sub.path) {
-                            navigate(sub.path);
-
-                            if (isMobile) {
-                              setSidebarOpen(false);
-                            }
+                          navigate(sub.path);
+                          if (isMobile) {
+                            setSidebarOpen(false);
                           }
                         }}
-                        className={`submenu-item ${
-                          isSubActive ? "active" : ""
-                        }`}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "8px",
-                        }}
+                        className={`submenu-item ${isSubActive ? "active" : ""}`}
                       >
-                        {SubIcon && <SubIcon size={15} />}
-                        <span>{sub.name}</span>
+                        <div className="submenu-bullet" />
+                        {SubIcon && <SubIcon size={14} className="submenu-icon" />}
+                        <span className="submenu-text">{sub.name}</span>
                       </div>
                     );
                   })}
@@ -134,6 +148,6 @@ export const Sidebar = ({
           );
         })}
       </nav>
-    </div>
+    </aside>
   );
 };

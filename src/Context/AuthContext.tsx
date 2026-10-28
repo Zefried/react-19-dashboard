@@ -2,9 +2,9 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 import { AuthContext } from "./AuthContextValue";
 import type { User } from "./AuthContextValue";
+import api from "../api/axios";
 
-
-export const AuthProvider = ({ children }: { children: ReactNode }) => { 
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem("token"));
   const [user, setUser] = useState<User | null>(() => {
     const storedUser = localStorage.getItem("user");
@@ -19,18 +19,26 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   });
 
-  const login = (token: string, user: User) => {
-    localStorage.setItem("token", token);
-    localStorage.setItem("user", JSON.stringify(user));
-    setToken(token);
-    setUser(user);
+  const login = (newToken: string, newUser: User) => {
+    localStorage.setItem("token", newToken);
+    localStorage.setItem("user", JSON.stringify(newUser));
+    setToken(newToken);
+    setUser(newUser);
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    setToken(null);
-    setUser(null);
+  const logout = async () => {
+    try {
+      if (token) {
+        await api.post("/logout");
+      }
+    } catch (err) {
+      console.error("Backend logout error:", err);
+    } finally {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      setToken(null);
+      setUser(null);
+    }
   };
 
   return (

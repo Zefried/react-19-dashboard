@@ -6,12 +6,6 @@ import { ProtectedRoute } from "./ProtectedRoutes";
 import { Unauthorized } from "../Pages/Auth/Unauthorized";
 import { DashboardHome } from "../Pages/Panels/DashboardHome";
 import { JsonView } from "../jsonWork/jsonView";
-import { serviceRoutes } from "./Admin/Service/ServiceRoutes";
-import { aiContextRoutes } from "./Admin/AiContext/AiContextRoutes";
-import { playgroundRoutes } from "./Admin/Playground/PlaygroundRoutes";
-import { businessRoutes } from "./Admin/Business/BusinessRoutes";
-import { leadQualificationRoutes } from "./Admin/LeadQualification/LeadQualificationRoutes";
-import { catalogueRoutes } from "./Admin/Catalogue/CatalogueRoutes";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +39,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <ProtectedRoute allowedRoles={["admin", "subadmin"]}>
+      <ProtectedRoute allowedRoles={["admin", "sub_admin", "user", "business"]}>
         <DashboardLayout />
       </ProtectedRoute>
     ),
@@ -54,14 +48,6 @@ const router = createBrowserRouter([
         index: true,
         element: <DashboardHome />,
       },
-      
-      // plug modular routes
-      ...serviceRoutes,
-      ...aiContextRoutes,
-      ...playgroundRoutes,
-      ...businessRoutes,
-      ...leadQualificationRoutes,
-      ...catalogueRoutes,
     ],
   },
   {

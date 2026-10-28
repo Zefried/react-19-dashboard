@@ -1,16 +1,4 @@
-import {
-  Home,
-  Settings,
-  ShoppingCart,
-  Building,
-  List,
-  Plus,
-  MessageSquare,
-  Bot,
-  FolderTree,
-  Layers,
-  Search,
-} from "lucide-react";
+import { Home, Users, Settings, Sliders, Shield, Lock, Activity } from "lucide-react";
 import type { Role } from "../Context/AuthContextValue";
 
 export type MenuItem = {
@@ -19,138 +7,115 @@ export type MenuItem = {
   path?: string;
   children?: {
     name: string;
-    path?: string;
-    icon: React.ElementType;
+    path: string;
+    icon?: React.ElementType;
   }[];
 };
 
 export const menus: Record<Role, MenuItem[]> = {
   admin: [
     {
-      name: "Dashboard",
+      name: "Overview",
       icon: Home,
-      path: "/dashboard",
+      path: "/dashboard?tab=overview",
     },
-
     {
-      name: "Playground",
-      icon: Bot,
+      name: "User Management",
+      icon: Users,
+      path: "/dashboard?tab=users",
+    },
+    {
+      name: "Settings",
+      icon: Settings,
       children: [
         {
-          name: "Chat",
-          icon: MessageSquare,
-          path: "/dashboard/playground",
+          name: "General Settings",
+          path: "/dashboard?tab=settings-general",
+          icon: Sliders,
         },
         {
-          name: "Create Campaign",
-          icon: Plus,
-          path: "/dashboard/playground/create-campaign",
+          name: "Roles & Permissions",
+          path: "/dashboard?tab=settings-roles",
+          icon: Shield,
         },
         {
-          name: "View Campaigns",
-          icon: List,
-          path: "/dashboard/playground/view-campaigns",
-        }
-      ]
-    },
-
-    {
-      name: "Services",
-      icon: ShoppingCart,
-      children: [
-        {
-          name: "View Services",
-          icon: List,
-          path: "/dashboard/service",
-        },
-        {
-          name: "Add Service",
-          icon: Plus,
-          path: "/dashboard/service/add",
-        },
-      ],
-    },
-
-    {
-      name: "AI Contexts",
-      icon: MessageSquare,
-      children: [
-        {
-          name: "View Contexts",
-          icon: List,
-          path: "/dashboard/ai-contexts",
-        },
-        {
-          name: "Add Context",
-          icon: Plus,
-          path: "/dashboard/ai-contexts/add",
-        },
-      ],
-    },
-
-    {
-      name: "Businesses",
-      icon: Building,
-      children: [
-        {
-          name: "View Businesses",
-          icon: List,
-          path: "/dashboard/businesses",
-        },
-        {
-          name: "Add Business",
-          icon: Plus,
-          path: "/dashboard/businesses/add",
-        },
-        {
-          name: "Add Qualification",
-          icon: Settings,
-          path: "/dashboard/lead-qualification",
-        },
-        {
-          name: "View Qualifications",
-          icon: List,
-          path: "/dashboard/lead-qualification/view",
-        },
-      ],
-    },
-
-    {
-      name: "Catalogue",
-      icon: FolderTree,
-      children: [
-        {
-          name: "Explorer & Studio",
-          icon: FolderTree,
-          path: "/dashboard/catalogue",
-        },
-        {
-          name: "Manage Niches",
-          icon: Layers,
-          path: "/dashboard/catalogue/niches",
-        },
-        {
-          name: "Spec Search",
-          icon: Search,
-          path: "/dashboard/catalogue/search",
+          name: "Security",
+          path: "/dashboard?tab=settings-security",
+          icon: Lock,
         },
       ],
     },
   ],
 
-  subadmin: [
+  sub_admin: [
     {
-      name: "Dashboard",
-      icon: Home,
-      path: "/dashboard",
+      name: "Sub-Admin Hub",
+      icon: Shield,
+      path: "/dashboard?tab=overview",
+    },
+    {
+      name: "Assigned Workflows",
+      icon: Activity,
+      path: "/dashboard?tab=workflows",
+    },
+    {
+      name: "Settings",
+      icon: Settings,
+      children: [
+        {
+          name: "My Profile",
+          path: "/dashboard?tab=settings-general",
+          icon: Sliders,
+        },
+        {
+          name: "Security",
+          path: "/dashboard?tab=settings-security",
+          icon: Lock,
+        },
+      ],
     },
   ],
 
-  department: [
+  user: [
     {
-      name: "Dashboard",
+      name: "My Dashboard",
       icon: Home,
-      path: "/dashboard",
+      path: "/dashboard?tab=overview",
+    },
+    {
+      name: "Settings",
+      icon: Settings,
+      children: [
+        {
+          name: "My Profile",
+          path: "/dashboard?tab=settings-general",
+          icon: Sliders,
+        },
+        {
+          name: "Security",
+          path: "/dashboard?tab=settings-security",
+          icon: Lock,
+        },
+      ],
+    },
+  ],
+
+  business: [
+    {
+      name: "Business Overview",
+      icon: Home,
+      path: "/dashboard?tab=overview",
+    },
+    {
+      name: "Settings",
+      icon: Settings,
+      children: [
+        {
+          name: "Business Profile",
+          path: "/dashboard?tab=settings-general",
+          icon: Sliders,
+        },
+      ],
     },
   ],
 };

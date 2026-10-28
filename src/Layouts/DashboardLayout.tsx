@@ -22,7 +22,7 @@ export const DashboardLayout = () => {
 
   if (!user?.role) return null;
 
-  const menu = menus[user.role];
+  const menu = menus[user.role] || [];
 
   return (
     <div className={dark ? "dark" : ""}>

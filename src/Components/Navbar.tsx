@@ -1,8 +1,8 @@
-import { Bell, Moon, Sun, PanelLeft, User, LogOut } from "lucide-react";
+import { Bell, Moon, Sun, PanelLeft, User, LogOut, ChevronDown } from "lucide-react";
 import "./Style/Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContextValue";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 type NavbarProps = {
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,94 +25,118 @@ export const Navbar = ({
 }: NavbarProps) => {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
+  const [searchParams] = useSearchParams();
 
-  const pageTitles: Record<string, string> = {
-    "/dashboard": "Dashboard",
-    "/dashboard/playground": "Playground Chat",
-    "/dashboard/playground/create-campaign": "Create Campaign",
-    "/dashboard/playground/view-campaigns": "View Campaigns",
-    "/dashboard/service": "Services",
-    "/dashboard/service/add": "Add Service",
-    "/dashboard/ai-contexts": "AI Contexts",
-    "/dashboard/ai-contexts/add": "Add AI Context",
-    "/dashboard/businesses": "Businesses",
-    "/dashboard/businesses/add": "Add Business",
-    "/dashboard/lead-qualification": "Lead Qualification",
-    "/dashboard/lead-qualification/view": "View Lead Qualifications",
-    "/dashboard/catalogue": "Catalogue Explorer & Studio",
-    "/dashboard/catalogue/niches": "Manage Niches",
-    "/dashboard/catalogue/search": "Specification Search",
-  };
+  const tab = searchParams.get("tab");
 
-  const pageTitle = pageTitles[location.pathname] || "Dashboard";
+  let pageTitle = "Dashboard";
+  if (tab === "overview") pageTitle = "Dashboard / Overview";
+  else if (tab === "users") pageTitle = "Dashboard / User Management";
+  else if (tab?.startsWith("settings")) pageTitle = "Dashboard / Settings";
+
+  const userInitial = auth?.user?.name ? auth.user.name[0].toUpperCase() : "A";
 
   return (
-    <div
-      className={`navbar ${dark ? "dark" : ""}`}
-      style={{ color: dark ? "white" : "black" }}
-    >
-      {/* LEFT */}
+    <header className={`navbar ${dark ? "dark" : ""}`}>
+      {/* LEFT: Toggle & Breadcrumb */}
       <div className="flex items-center gap-3">
-        <PanelLeft
-          size={18}
-          className="cursor-pointer"
+        <button
+          className="icon-btn"
           onClick={() => setSidebarOpen((prev) => !prev)}
-        />
+          title="Toggle Sidebar"
+        >
+          <PanelLeft size={18} />
+        </button>
         <span className="nav-title">{pageTitle}</span>
       </div>
 
-      {/* RIGHT */}
-      <div className="flex items-center gap-4 extra-margin">
+      {/* RIGHT: Actions */}
+      <div className="flex items-center gap-3 extra-margin">
+        {/* Dark/Light toggle */}
         <button
           onClick={() => setDark((prev) => !prev)}
           className="icon-btn"
+          title={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
-          {dark ? <Sun size={15} /> : <Moon size={15} />}
+          {dark ? <Sun size={17} /> : <Moon size={17} />}
         </button>
 
+        {/* Notifications */}
         <div className="relative">
-          <Bell
-            size={18}
-            className="icon-btn-bell"
+          <button
+            className="icon-btn"
             onClick={() => setShowNotif((prev) => !prev)}
-          />
+            title="Notifications"
+          >
+            <Bell size={17} />
+          </button>
 
           {showNotif && (
             <div className="notif-box">
-              <h3 className="font-semibold mb-2">Notifications</h3>
-              <p className="text-sm opacity-70">No new notifications</p>
+              <h3 style={{ fontSize: "14px", fontWeight: 600, margin: "0 0 6px 0" }}>Notifications</h3>
+              <p style={{ fontSize: "12.5px", color: "#64748b", margin: 0 }}>No new alerts right now.</p>
             </div>
           )}
         </div>
 
-        {/* AVATAR */}
+        {/* User Pill / Avatar */}
         <div
-          className="avatar cursor-pointer"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            cursor: "pointer",
+            padding: "4px 8px 4px 4px",
+            borderRadius: "20px",
+            border: "1px solid #eef2f6",
+            background: "#ffffff",
+          }}
           onClick={() => setShowProfile((prev) => !prev)}
-        />
+        >
+          <div className="avatar">
+            {userInitial}
+          </div>
+          <ChevronDown size={14} color="#64748b" />
+        </div>
 
-        {/* PROFILE DROPDOWN */}
+        {/* Profile Dropdown */}
         {showProfile && (
           <div className="profile-box">
-            <div className="profile-item">
-              <User size={16} />
-              <span>Profile</span>
+            <div style={{ padding: "8px 12px 10px 12px", borderBottom: "1px solid #f1f5f9", marginBottom: "4px" }}>
+              <div style={{ fontSize: "13.5px", fontWeight: 600, color: "#0f172a" }}>
+                {auth?.user?.name || "User"}
+              </div>
+              <div style={{ fontSize: "11px", color: "#64748b", textTransform: "capitalize" }}>
+                {auth?.user?.role === "sub_admin" ? "Sub-Admin" : auth?.user?.role || "Admin"}
+              </div>
             </div>
 
             <div
               className="profile-item"
               onClick={() => {
-                auth?.logout();
+                setShowProfile(false);
+                navigate("/dashboard?tab=settings-general");
+              }}
+            >
+              <User size={15} />
+              <span>Profile Settings</span>
+            </div>
+
+            <div
+              className="profile-item"
+              style={{ color: "#ef4444" }}
+              onClick={async () => {
+                setShowProfile(false);
+                await auth?.logout();
                 navigate("/login");
               }}
             >
-              <LogOut size={16} />
-              <span>Logout</span>
+              <LogOut size={15} />
+              <span>Sign Out</span>
             </div>
           </div>
         )}
       </div>
-    </div>
+    </header>
   );
 };
