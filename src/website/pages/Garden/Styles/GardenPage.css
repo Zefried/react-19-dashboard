@@ -1,0 +1,534 @@
+/* ==========================================================================
+   Garden Page Styles ("Our Garden")
+   ========================================================================== */
+
+.gp1 {
+  width: 100%;
+  background-color: #FAF5ED;
+  color: #2E241E;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero Section ("Our Garden")
+   -------------------------------------------------------------------------- */
+.gp-hero {
+  position: relative;
+  width: 100%;
+  background-color: #1A261D;
+  overflow: hidden;
+}
+
+.gp-hero-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  min-height: 290px;
+  max-height: 560px;
+}
+
+@media (max-width: 640px) {
+  .gp-hero-media {
+    aspect-ratio: 16 / 9;
+    min-height: 250px;
+  }
+}
+
+.gp-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.gp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 20, 16, 0.72) 0%,
+    rgba(14, 20, 16, 0.45) 45%,
+    rgba(14, 20, 16, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .gp-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 20, 16, 0.5) 0%,
+      rgba(14, 20, 16, 0.75) 100%
+    );
+  }
+}
+
+.gp-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 28px 48px;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .gp-hero-content {
+    padding: 36px 48px 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gp-hero-content {
+    padding: 48px 64px 64px;
+  }
+}
+
+.gp-hero-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E2D2BC;
+  margin-bottom: 10px;
+}
+
+.gp-hero-title {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 640px) {
+  .gp-hero-title {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gp-hero-title {
+    font-size: 64px;
+  }
+}
+
+.gp-hero-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.gp-hero-line {
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.gp-hero-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.gp-hero-icon {
+  color: #E2D2BC;
+}
+
+.gp-hero-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 400;
+  color: #F8F3EC;
+  margin: 0;
+  max-width: 420px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+  .gp-hero-subtitle {
+    font-size: 21px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Section: Nature in Heritage Surroundings
+   -------------------------------------------------------------------------- */
+.gp-surroundings {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 56px 24px 64px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .gp-surroundings {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    padding: 72px 36px 80px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .gp-surroundings {
+    gap: 68px;
+  }
+}
+
+/* Left Botanical Leaf Watermark */
+.gp-leaf-left {
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  width: 110px;
+  height: 250px;
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+@media (min-width: 1280px) {
+  .gp-leaf-left {
+    left: -40px;
+    width: 130px;
+    height: 300px;
+  }
+}
+
+.gp-surroundings-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gp-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8C3A27;
+  margin-bottom: 10px;
+}
+
+.gp-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gp-flourish.center {
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.gp-flourish-line {
+  height: 1px;
+  width: 44px;
+  background: linear-gradient(90deg, rgba(140, 58, 39, 0.7), transparent);
+}
+
+.gp-flourish-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(140, 58, 39, 0.7));
+}
+
+.gp-flourish-icon {
+  flex-shrink: 0;
+}
+
+.gp-heading {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  line-height: 1.18;
+  font-weight: 500;
+  color: #221B16;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .gp-heading {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gp-heading {
+    font-size: 44px;
+  }
+}
+
+.gp-para {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4A423B;
+  margin: 0 0 16px 0;
+  max-width: 520px;
+}
+
+@media (min-width: 640px) {
+  .gp-para {
+    font-size: 15.5px;
+  }
+}
+
+.gp-surroundings-img-col {
+  position: relative;
+  z-index: 1;
+}
+
+.gp-pathway-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(40, 30, 22, 0.16);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  aspect-ratio: 16 / 10;
+  background-color: #EFE7DA;
+}
+
+.gp-pathway-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. Section: Garden Highlights — A Space to Unwind (3 Pillars)
+   -------------------------------------------------------------------------- */
+.gp-highlights {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .gp-highlights {
+    padding: 64px 36px 88px;
+  }
+}
+
+.gp-highlights-header {
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.gp-pillars-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .gp-pillars-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+
+.gp-pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* Vertical divider between pillars on desktop */
+@media (min-width: 768px) {
+  .gp-pillar:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(197, 160, 89, 0.45) 20%,
+      rgba(197, 160, 89, 0.45) 80%,
+      transparent
+    );
+  }
+}
+
+.gp-pillar-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background-color: #F1E3D4;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8C3A27;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(140, 58, 39, 0.08);
+  transition: transform 0.35s ease, background-color 0.35s ease;
+}
+
+.gp-pillar:hover .gp-pillar-icon-wrap {
+  transform: translateY(-3px) scale(1.05);
+  background-color: #ECE0D0;
+}
+
+.gp-pillar-title {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #221B16;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .gp-pillar-title {
+    font-size: 24px;
+  }
+}
+
+.gp-pillar-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13.5px;
+  color: #6C6258;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Section: Full-Width Scenic Garden Panorama with Quote
+   -------------------------------------------------------------------------- */
+.gp-panorama {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1A261D;
+}
+
+.gp-panorama-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  min-height: 320px;
+  max-height: 560px;
+}
+
+@media (max-width: 640px) {
+  .gp-panorama-media {
+    aspect-ratio: 16 / 9;
+    min-height: 280px;
+  }
+}
+
+.gp-panorama-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  display: block;
+}
+
+.gp-panorama-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(14, 20, 16, 0.65) 0%,
+    rgba(14, 20, 16, 0.35) 45%,
+    rgba(14, 20, 16, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .gp-panorama-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 20, 16, 0.2) 0%,
+      rgba(14, 20, 16, 0.75) 100%
+    );
+  }
+}
+
+.gp-panorama-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 28px;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .gp-panorama-content {
+    padding: 48px 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gp-panorama-content {
+    padding: 64px 64px;
+  }
+}
+
+.gp-quote-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 440px;
+}
+
+.gp-quote-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0 0 16px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+@media (min-width: 640px) {
+  .gp-quote-text {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gp-quote-text {
+    font-size: 32px;
+  }
+}
+
+.gp-quote-line {
+  width: 90px;
+  height: 2px;
+  background-color: #D4B483;
+}

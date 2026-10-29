@@ -6,12 +6,13 @@ import { ProtectedRoute } from "./ProtectedRoutes";
 import { Unauthorized } from "../Pages/Auth/Unauthorized";
 import { DashboardHome } from "../Pages/Panels/DashboardHome";
 import { JsonView } from "../jsonWork/jsonView";
+import { websiteRoutes } from "../website/routes/websiteRoutes";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Navigate to="/login" replace />,
-  },
+  // Public Heritage Website Routes
+  ...websiteRoutes,
+
+  // Existing Chat & Utilities
   {
     path: "/chat/:token?",
     element: <PublicChat />,
@@ -21,16 +22,18 @@ const router = createBrowserRouter([
     element: <PublicChat />,
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
     path: "/json",
     element: <JsonView />,
   },
   {
     path: "/json-view",
     element: <JsonView />,
+  },
+
+  // Future / Existing Admin & Auth Routes
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/unauthorized",
@@ -52,7 +55,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Navigate to="/login" replace />,
+    element: <Navigate to="/" replace />,
   },
 ]);
 

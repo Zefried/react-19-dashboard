@@ -1,0 +1,580 @@
+/* ==========================================================================
+   Discover Dibrugarh Page Styles ("The Tea City of Assam")
+   ========================================================================== */
+
+.dd-page {
+  width: 100%;
+  background-color: #FAF5ED;
+  color: #2E241E;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero Section ("The Tea City of Assam")
+   -------------------------------------------------------------------------- */
+.dd-hero {
+  position: relative;
+  width: 100%;
+  background-color: #1A261D;
+  overflow: hidden;
+}
+
+.dd-hero-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  min-height: 300px;
+  max-height: 580px;
+}
+
+@media (max-width: 640px) {
+  .dd-hero-media {
+    aspect-ratio: 16 / 9;
+    min-height: 260px;
+  }
+}
+
+.dd-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+
+.dd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 20, 16, 0.78) 0%,
+    rgba(14, 20, 16, 0.52) 42%,
+    rgba(14, 20, 16, 0.12) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .dd-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 20, 16, 0.55) 0%,
+      rgba(14, 20, 16, 0.82) 100%
+    );
+  }
+}
+
+.dd-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 28px 48px;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .dd-hero-content {
+    padding: 36px 48px 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dd-hero-content {
+    padding: 48px 64px 64px;
+  }
+}
+
+.dd-hero-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E2D2BC;
+  margin-bottom: 10px;
+}
+
+.dd-hero-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #FAF5ED;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .dd-hero-title {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dd-hero-title {
+    font-size: 64px;
+  }
+}
+
+.dd-hero-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.dd-hero-line {
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.dd-hero-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.dd-hero-icon {
+  color: #E2D2BC;
+}
+
+.dd-hero-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 400;
+  color: #F8F3EC;
+  margin: 0;
+  max-width: 480px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+  .dd-hero-subtitle {
+    font-size: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Common Flourish Divider
+   -------------------------------------------------------------------------- */
+.dd-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.dd-flourish.center {
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.dd-flourish-line {
+  height: 1px;
+  width: 44px;
+  background: linear-gradient(90deg, rgba(140, 58, 39, 0.7), transparent);
+}
+
+.dd-flourish-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(140, 58, 39, 0.7));
+}
+
+.dd-flourish-icon {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. Section: Nature, Heritage and Warm Hospitality
+   -------------------------------------------------------------------------- */
+.dd-region-section {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .dd-region-section {
+    grid-template-columns: 1fr 1.05fr;
+    gap: 56px;
+    padding: 72px 36px 76px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .dd-region-section {
+    gap: 68px;
+  }
+}
+
+.dd-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8C3A27;
+  margin-bottom: 10px;
+}
+
+.dd-heading {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  line-height: 1.18;
+  font-weight: 500;
+  color: #221B16;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .dd-heading {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dd-heading {
+    font-size: 44px;
+  }
+}
+
+.dd-para {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #55483E;
+  margin: 0 0 16px 0;
+  font-weight: 400;
+}
+
+.dd-para:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .dd-para {
+    font-size: 16.5px;
+  }
+}
+
+.dd-text-col {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dd-img-col {
+  position: relative;
+  z-index: 1;
+}
+
+.dd-img-frame {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(40, 26, 18, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.dd-img-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(40, 26, 18, 0.12);
+}
+
+.dd-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Watermarks */
+.dd-leaf-watermark-left {
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  width: 110px;
+  height: 280px;
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+@media (min-width: 1280px) {
+  .dd-leaf-watermark-left {
+    left: -40px;
+    width: 135px;
+    height: 320px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Section: Around Dibrugarh (6-Card Grid)
+   -------------------------------------------------------------------------- */
+.dd-places-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px 64px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 860px) {
+  .dd-places-section {
+    padding: 24px 36px 84px;
+  }
+}
+
+.dd-places-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dd-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 720px) {
+  .dd-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 980px) {
+  .dd-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
+
+.dd-card {
+  background: #FCF8F2;
+  border: 1px solid rgba(197, 160, 89, 0.24);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(35, 25, 15, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.dd-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(35, 25, 15, 0.09);
+  border-color: rgba(140, 58, 39, 0.35);
+}
+
+.dd-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #EAE1D3;
+}
+
+.dd-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dd-card:hover .dd-card-img {
+  transform: scale(1.03);
+}
+
+.dd-card-body {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dd-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dd-card-icon-wrap {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8C3A27;
+}
+
+.dd-card-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #221B16;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .dd-card-title {
+    font-size: 20px;
+  }
+}
+
+.dd-card-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5C5248;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   4. Section: Full-Width Panoramic Tea Garden Banner
+   -------------------------------------------------------------------------- */
+.dd-panorama {
+  position: relative;
+  width: 100%;
+  background-color: #1A261D;
+  overflow: hidden;
+}
+
+.dd-panorama-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 6.5;
+  min-height: 280px;
+  max-height: 480px;
+}
+
+@media (max-width: 640px) {
+  .dd-panorama-media {
+    aspect-ratio: 16 / 9;
+    min-height: 260px;
+  }
+}
+
+.dd-panorama-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.dd-panorama-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 20, 16, 0.82) 0%,
+    rgba(14, 20, 16, 0.55) 45%,
+    rgba(14, 20, 16, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .dd-panorama-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 20, 16, 0.6) 0%,
+      rgba(14, 20, 16, 0.85) 100%
+    );
+  }
+}
+
+.dd-panorama-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 28px 48px;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .dd-panorama-content {
+    padding: 36px 48px 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dd-panorama-content {
+    padding: 48px 64px 64px;
+  }
+}
+
+.dd-panorama-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E2D2BC;
+  margin-bottom: 10px;
+}
+
+.dd-panorama-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 500;
+  color: #FAF5ED;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .dd-panorama-title {
+    font-size: 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dd-panorama-title {
+    font-size: 52px;
+  }
+}
+
+.dd-panorama-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #F8F3EC;
+  margin: 0;
+  max-width: 480px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+  .dd-panorama-desc {
+    font-size: 16.5px;
+  }
+}

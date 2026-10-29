@@ -1,0 +1,303 @@
+.hg1 {
+  width: 100%;
+  background: radial-gradient(circle at 50% 50%, #15261A 0%, #0B160F 100%);
+  color: #FAF7F0;
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 68px 0;
+  border-top: 1px solid #1D3322;
+  border-bottom: 1px solid #1D3322;
+}
+
+@media (min-width: 640px) {
+  .hg1 {
+    padding: 72px 0 84px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hg1 {
+    padding: 96px 0 110px 0;
+  }
+}
+
+.hg2 {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .hg2 {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hg2 {
+    padding: 0 32px;
+  }
+}
+
+.hg3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .hg3 {
+    gap: 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hg3 {
+    grid-template-columns: 5fr 4fr 3.5fr;
+    gap: 36px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hg3 {
+    grid-template-columns: 5fr 4fr 3.5fr;
+    gap: 48px;
+  }
+}
+
+/* =========================================
+   Left Column: Narrative & CTA
+   ========================================= */
+.hg4 {
+  text-align: left;
+  max-width: 500px;
+}
+
+.hg5 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  color: #ADC4B2;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .hg5 {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    margin-bottom: 14px;
+  }
+}
+
+.hg6 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(28px, 6.5vw, 50px);
+  line-height: 1.1;
+  color: #FAF7F0;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 640px) {
+  .hg6 {
+    margin-bottom: 20px;
+  }
+}
+
+.hg7 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #D0DDD3;
+  line-height: 1.68;
+  margin-bottom: 26px;
+  max-width: 440px;
+}
+
+@media (min-width: 640px) {
+  .hg7 {
+    font-size: 15.5px;
+    margin-bottom: 32px;
+  }
+}
+
+.hg8 {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================
+   Center Column: Blooming White Flowers Visual
+   ========================================= */
+.hg9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.hg10-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+  .hg10-wrap {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hg10-wrap {
+    max-width: 360px;
+  }
+}
+
+.hg10 {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.hg9:hover .hg10 {
+  transform: scale(1.03);
+}
+
+/* =========================================
+   Right Column: Botanical Stats & Highlights
+   ========================================= */
+.hg11 {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-left: 0;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 20px 18px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .hg11 {
+    background: transparent;
+    padding: 0;
+    padding-left: 20px;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0;
+    gap: 26px;
+  }
+}
+
+/* Row 1: 275+ Plants */
+.hg12 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hg13 {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  color: #E2D4BC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .hg13 {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.hg14-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.hg14 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #FAF7F0;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .hg14 {
+    font-size: 36px;
+  }
+}
+
+.hg15 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #C8D6CA;
+  margin-top: 3px;
+}
+
+/* Row 2: Rare & Endangered Species */
+.hg16 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hg17 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FAF7F0;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+
+/* Ornamental separator */
+.hg18 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(226, 212, 188, 0.5);
+  margin: -4px 0;
+}
+
+.hg18-line {
+  width: 32px;
+  height: 1px;
+  background-color: rgba(226, 212, 188, 0.35);
+}
+
+/* Row 3: Medicinal & Edible Herbs */
+.hg19 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hg20 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FAF7F0;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}

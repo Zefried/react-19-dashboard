@@ -1,0 +1,12 @@
+.wl1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAF7F0;
+  color: #2E221D;
+}
+
+.wl2 {
+  flex: 1;
+  width: 100%;
+}

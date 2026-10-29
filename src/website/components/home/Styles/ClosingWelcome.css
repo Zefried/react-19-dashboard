@@ -1,0 +1,189 @@
+/* ==========================================================================
+   Closing Welcome Section Styles ("We Look Forward to Welcoming You")
+   ========================================================================== */
+
+.cw1 {
+  position: relative;
+  width: 100%;
+  background-color: #121C15;
+  color: #F8F3EC;
+  padding: 60px 24px;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .cw1 {
+    padding: 80px 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cw1 {
+    padding: 100px 48px;
+  }
+}
+
+/* Ambient Warm Glow in Background */
+.cw1-glow {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2-Column Responsive Layout */
+.cw2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 900px) {
+  .cw2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cw2 {
+    gap: 72px;
+  }
+}
+
+/* Left Image Column (Illuminated Gate) */
+.cw3 {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 180, 131, 0.22);
+  aspect-ratio: 16 / 13;
+  width: 100%;
+  background-color: #0A110B;
+}
+
+@media (min-width: 900px) {
+  .cw3 {
+    aspect-ratio: 16 / 13;
+  }
+}
+
+.cw4 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cw3:hover .cw4 {
+  transform: scale(1.03);
+}
+
+/* Subtle Gate Vignette Overlay */
+.cw5 {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+/* Right Content Column */
+.cw6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Eyebrow */
+.cw7 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C5A059;
+  margin-bottom: 12px;
+}
+
+/* Heading */
+.cw8 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  line-height: 1.18;
+  font-weight: 400;
+  color: #F8F3EC;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .cw8 {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cw8 {
+    font-size: 46px;
+  }
+}
+
+/* Divider Line with Diamond Motif */
+.cw9 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.cw9-line {
+  height: 1px;
+  width: 44px;
+  background: linear-gradient(90deg, rgba(197, 160, 89, 0.7), transparent);
+}
+
+.cw9-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.7));
+}
+
+.cw9-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: #C5A059;
+  transform: rotate(45deg);
+}
+
+/* Narrative Paragraph */
+.cw10 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #C9C4B8;
+  margin: 0 0 32px 0;
+  max-width: 520px;
+}
+
+@media (min-width: 640px) {
+  .cw10 {
+    font-size: 16px;
+  }
+}
+
+/* CTA Wrapper */
+.cw11 {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,32 @@
+.ted1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ted2 {
+  width: 100%;
+  height: 40px;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .ted2 {
+    height: 56px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ted2 {
+    height: 72px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ted2 {
+    height: 86px;
+  }
+}

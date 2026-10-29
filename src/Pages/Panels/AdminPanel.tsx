@@ -15,6 +15,8 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import api from "../../api/axios";
+import { VisitEnquiriesTab } from "./Components/VisitEnquiriesTab";
+import { CottageBookingsTab } from "./Components/CottageBookingsTab";
 import { useSearchParams } from "react-router-dom";
 
 interface ManagedUser {
@@ -225,7 +227,11 @@ const AdminPanel = () => {
       {/* =======================
           TAB: SETTINGS
       ======================= */}
-      {currentTab.startsWith("settings") ? (
+      {currentTab === "visit-enquiries" ? (
+        <VisitEnquiriesTab />
+      ) : currentTab === "cottage-bookings" ? (
+        <CottageBookingsTab />
+      ) : currentTab.startsWith("settings") ? (
         <div className="adp__orders">
           <div className="adp-settings-container">
             <div>

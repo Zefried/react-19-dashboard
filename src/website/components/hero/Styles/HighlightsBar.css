@@ -1,0 +1,161 @@
+.hlb1 {
+  width: 100%;
+  background-color: #F5EDE1;
+  border-bottom: 1px solid #E3D6C5;
+  padding: 18px 0;
+}
+
+@media (min-width: 768px) {
+  .hlb1 {
+    padding: 28px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hlb1 {
+    padding: 34px 0;
+  }
+}
+
+.hlb2 {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+@media (min-width: 640px) {
+  .hlb2 {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hlb2 {
+    padding: 0 32px;
+  }
+}
+
+/* 2x2 on mobile, 4-column on desktop */
+.hlb3 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid rgba(221, 207, 192, 0.7);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hlb3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.hlb4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 14px 8px;
+  background-color: #F5EDE1;
+}
+
+/* Mobile grid borders: 2x2 dividers */
+.hlb4:nth-child(1) {
+  border-right: 1px solid #DDCFC0;
+  border-bottom: 1px solid #DDCFC0;
+}
+
+.hlb4:nth-child(2) {
+  border-bottom: 1px solid #DDCFC0;
+}
+
+.hlb4:nth-child(3) {
+  border-right: 1px solid #DDCFC0;
+}
+
+@media (min-width: 768px) {
+  .hlb4 {
+    flex-direction: row;
+    text-align: left;
+    gap: 14px;
+    padding: 6px 18px;
+    border: none;
+    border-right: 1px solid #DDCFC0;
+  }
+  .hlb4:nth-child(1),
+  .hlb4:nth-child(2),
+  .hlb4:nth-child(3) {
+    border-right: 1px solid #DDCFC0;
+    border-bottom: none;
+  }
+  .hlb4:last-child {
+    border-right: none;
+  }
+}
+
+.hlb5 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7A2A1E;
+}
+
+.hlb5 svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 640px) {
+  .hlb5 svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hlb5 svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.hlb6 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hlb6 {
+    text-align: left;
+  }
+}
+
+.hlb7 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: #3A2D26;
+  text-transform: uppercase;
+  line-height: 1.2;
+  white-space: pre-line;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .hlb7 {
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hlb7 {
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+  }
+}

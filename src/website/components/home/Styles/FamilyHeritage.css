@@ -1,0 +1,190 @@
+.fh1 {
+  width: 100%;
+  background-color: #FAF6EE;
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 72px 0;
+}
+
+@media (min-width: 640px) {
+  .fh1 {
+    padding: 72px 0 90px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fh1 {
+    padding: 96px 0 120px 0;
+  }
+}
+
+.fh2 {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .fh2 {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fh2 {
+    padding: 0 32px;
+  }
+}
+
+.fh3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .fh3 {
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fh3 {
+    grid-template-columns: 5fr 6fr;
+    gap: 60px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .fh3 {
+    grid-template-columns: 5fr 6.5fr;
+    gap: 72px;
+  }
+}
+
+/* Left Column: Story text */
+.fh4 {
+  text-align: left;
+  max-width: 520px;
+}
+
+.fh5 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: #7A2A1E;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .fh5 {
+    font-size: 11.5px;
+    letter-spacing: 0.22em;
+  }
+}
+
+.fh6 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(28px, 6.5vw, 54px);
+  line-height: 1.1;
+  color: #241A15;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 640px) {
+  .fh6 {
+    margin-bottom: 22px;
+  }
+}
+
+/* Ornamental vintage flourish divider */
+.fh7 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #8C4736;
+}
+
+@media (min-width: 640px) {
+  .fh7 {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+}
+
+.fh8 {
+  width: 40px;
+  height: 1px;
+  background-color: #8C4736;
+  opacity: 0.6;
+}
+
+.fh9 {
+  width: 22px;
+  height: 12px;
+  opacity: 0.8;
+}
+
+.fh10 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 14.5px;
+  color: #4A3E36;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 640px) {
+  .fh10 {
+    font-size: 16px;
+    margin-bottom: 34px;
+  }
+}
+
+.fh11 {
+  display: flex;
+  align-items: center;
+}
+
+/* Right Column: Vintage Visual Collage */
+.fh12 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.fh13 {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  filter: drop-shadow(0 10px 25px rgba(74, 53, 38, 0.12));
+  transition: transform 0.4s ease;
+}
+
+@media (min-width: 1024px) {
+  .fh13 {
+    max-width: 580px;
+  }
+}
+
+.fh13:hover {
+  transform: scale(1.015);
+}
+
+.fh14 {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}

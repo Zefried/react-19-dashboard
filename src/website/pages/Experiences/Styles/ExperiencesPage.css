@@ -1,0 +1,495 @@
+/* ==========================================================================
+   Experiences Page Styles ("Experiences")
+   ========================================================================== */
+
+.ep-page {
+  width: 100%;
+  background-color: #FAF5ED;
+  color: #2E241E;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero Section ("Experiences")
+   -------------------------------------------------------------------------- */
+.ep-hero {
+  position: relative;
+  width: 100%;
+  background-color: #1A261D;
+  overflow: hidden;
+}
+
+.ep-hero-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  min-height: 300px;
+  max-height: 580px;
+}
+
+@media (max-width: 640px) {
+  .ep-hero-media {
+    aspect-ratio: 16 / 9;
+    min-height: 260px;
+  }
+}
+
+.ep-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+
+.ep-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 20, 16, 0.78) 0%,
+    rgba(14, 20, 16, 0.52) 42%,
+    rgba(14, 20, 16, 0.12) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .ep-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 20, 16, 0.55) 0%,
+      rgba(14, 20, 16, 0.82) 100%
+    );
+  }
+}
+
+.ep-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 28px 48px;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .ep-hero-content {
+    padding: 36px 48px 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ep-hero-content {
+    padding: 48px 64px 64px;
+  }
+}
+
+.ep-hero-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E2D2BC;
+  margin-bottom: 10px;
+}
+
+.ep-hero-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #FAF5ED;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .ep-hero-title {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ep-hero-title {
+    font-size: 64px;
+  }
+}
+
+.ep-hero-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ep-hero-line {
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.ep-hero-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.ep-hero-icon {
+  color: #E2D2BC;
+}
+
+.ep-hero-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 400;
+  color: #F8F3EC;
+  margin: 0;
+  max-width: 480px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+  .ep-hero-subtitle {
+    font-size: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Common Section Styles & Flourish Divider
+   -------------------------------------------------------------------------- */
+.ep-section {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .ep-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    padding: 72px 36px 76px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .ep-section {
+    gap: 68px;
+  }
+}
+
+.ep-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8C3A27;
+  margin-bottom: 10px;
+}
+
+.ep-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ep-flourish.center {
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.ep-flourish-line {
+  height: 1px;
+  width: 44px;
+  background: linear-gradient(90deg, rgba(140, 58, 39, 0.7), transparent);
+}
+
+.ep-flourish-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(140, 58, 39, 0.7));
+}
+
+.ep-flourish-icon {
+  flex-shrink: 0;
+}
+
+.ep-heading {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  line-height: 1.18;
+  font-weight: 500;
+  color: #221B16;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .ep-heading {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ep-heading {
+    font-size: 44px;
+  }
+}
+
+.ep-para {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #55483E;
+  margin: 0 0 16px 0;
+  font-weight: 400;
+}
+
+.ep-para:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .ep-para {
+    font-size: 16.5px;
+  }
+}
+
+.ep-text-col {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ep-img-col {
+  position: relative;
+  z-index: 1;
+}
+
+.ep-img-frame {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(40, 26, 18, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ep-img-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(40, 26, 18, 0.12);
+}
+
+.ep-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Watermarks */
+.ep-leaf-watermark-left {
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  width: 110px;
+  height: 280px;
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+@media (min-width: 1280px) {
+  .ep-leaf-watermark-left {
+    left: -40px;
+    width: 135px;
+    height: 320px;
+  }
+}
+
+.ep-leaf-watermark-right {
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  width: 110px;
+  height: 280px;
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+@media (min-width: 1280px) {
+  .ep-leaf-watermark-right {
+    right: -40px;
+    width: 135px;
+    height: 320px;
+  }
+}
+
+.ep-wheel-watermark {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* --------------------------------------------------------------------------
+   2. Section: 3 Botanical Highlight Cards
+   -------------------------------------------------------------------------- */
+.ep-cards-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px 64px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 860px) {
+  .ep-cards-section {
+    padding: 20px 36px 80px;
+  }
+}
+
+.ep-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 720px) {
+  .ep-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .ep-cards-grid {
+    gap: 32px;
+  }
+}
+
+.ep-card {
+  background: #FCF8F2;
+  border: 1px solid rgba(197, 160, 89, 0.24);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(35, 25, 15, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.ep-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(35, 25, 15, 0.09);
+  border-color: rgba(140, 58, 39, 0.35);
+}
+
+.ep-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #EAE1D3;
+}
+
+.ep-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.ep-card:hover .ep-card-img {
+  transform: scale(1.03);
+}
+
+.ep-card-body {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ep-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ep-card-icon-wrap {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8C3A27;
+}
+
+.ep-card-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #221B16;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .ep-card-title {
+    font-size: 20px;
+  }
+}
+
+.ep-card-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5C5248;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   3. Alternating Sections
+   -------------------------------------------------------------------------- */
+/* Section 3: Vintage & Antique (Image Left, Text Right) */
+@media (min-width: 860px) {
+  .ep-vintage {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ep-vintage .ep-img-col {
+    order: 1;
+  }
+  .ep-vintage .ep-text-col {
+    order: 2;
+  }
+}
+
+/* Section 4: Heritage in Every Detail (Text Left, Image Right) */
+@media (min-width: 860px) {
+  .ep-architecture {
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 84px;
+  }
+}

@@ -1,0 +1,569 @@
+/* ==========================================================================
+   The Heritage House Page Styles
+   ========================================================================== */
+
+.hhp1 {
+  width: 100%;
+  background-color: #FAF5ED;
+  color: #2E241E;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero Section ("A Living Heritage of Assam")
+   -------------------------------------------------------------------------- */
+.hhp-hero {
+  position: relative;
+  width: 100%;
+  background-color: #141C15;
+  overflow: hidden;
+}
+
+.hhp-hero-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  min-height: 290px;
+  max-height: 560px;
+}
+
+@media (max-width: 640px) {
+  .hhp-hero-media {
+    aspect-ratio: 16 / 9;
+    min-height: 250px;
+  }
+}
+
+.hhp-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+
+.hhp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 20, 16, 0.72) 0%,
+    rgba(14, 20, 16, 0.45) 45%,
+    rgba(14, 20, 16, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hhp-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 20, 16, 0.5) 0%,
+      rgba(14, 20, 16, 0.75) 100%
+    );
+  }
+}
+
+.hhp-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 28px 48px;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .hhp-hero-content {
+    padding: 36px 48px 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hhp-hero-content {
+    padding: 48px 64px 64px;
+  }
+}
+
+.hhp-hero-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E2D2BC;
+  margin-bottom: 10px;
+}
+
+.hhp-hero-title {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 640px) {
+  .hhp-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hhp-hero-title {
+    font-size: 58px;
+  }
+}
+
+.hhp-hero-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.hhp-hero-line {
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.hhp-hero-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.hhp-hero-icon {
+  color: #E2D2BC;
+}
+
+.hhp-hero-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #F8F3EC;
+  margin: 0;
+  max-width: 460px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+  .hhp-hero-subtitle {
+    font-size: 19px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Section: Tradition, Architecture and Timeless Charm
+   -------------------------------------------------------------------------- */
+.hhp-tradition {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 56px 24px 64px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .hhp-tradition {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    padding: 72px 36px 80px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .hhp-tradition {
+    gap: 68px;
+  }
+}
+
+/* Left Botanical Leaf Watermark */
+.hhp-leaf-left {
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  width: 110px;
+  height: 250px;
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+@media (min-width: 1280px) {
+  .hhp-leaf-left {
+    left: -40px;
+    width: 130px;
+    height: 300px;
+  }
+}
+
+.hhp-tradition-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hhp-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8C3A27;
+  margin-bottom: 10px;
+}
+
+.hhp-heading {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 30px;
+  line-height: 1.18;
+  font-weight: 500;
+  color: #221B16;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .hhp-heading {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hhp-heading {
+    font-size: 42px;
+  }
+}
+
+/* Flourish Divider */
+.hhp-flourish {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.hhp-flourish.center {
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.hhp-flourish-line {
+  height: 1px;
+  width: 44px;
+  background: linear-gradient(90deg, rgba(140, 58, 39, 0.7), transparent);
+}
+
+.hhp-flourish-line.reverse {
+  background: linear-gradient(90deg, transparent, rgba(140, 58, 39, 0.7));
+}
+
+.hhp-flourish-icon {
+  flex-shrink: 0;
+}
+
+.hhp-para {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4A423B;
+  margin: 0;
+  max-width: 520px;
+}
+
+@media (min-width: 640px) {
+  .hhp-para {
+    font-size: 15.5px;
+  }
+}
+
+.hhp-tradition-img-col {
+  position: relative;
+  z-index: 1;
+}
+
+.hhp-tradition-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(40, 30, 22, 0.16);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  aspect-ratio: 16 / 10;
+  background-color: #EFE7DA;
+}
+
+.hhp-tradition-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. Section: Unique Heritage Cottages (2x2 Grid)
+   -------------------------------------------------------------------------- */
+.hhp-cottages {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+@media (min-width: 640px) {
+  .hhp-cottages {
+    padding: 56px 36px 96px;
+  }
+}
+
+.hhp-cottages-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+@media (min-width: 640px) {
+  .hhp-cottages-header {
+    margin-bottom: 52px;
+  }
+}
+
+.hhp-cottages-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+@media (min-width: 768px) {
+  .hhp-cottages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .hhp-cottages-grid {
+    gap: 40px;
+  }
+}
+
+/* Single Cottage Card */
+.hhp-card {
+  background-color: #FAF6F0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 4px 16px rgba(40, 30, 20, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.hhp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(40, 30, 20, 0.14);
+}
+
+.hhp-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #1A261D;
+}
+
+.hhp-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hhp-card:hover .hhp-card-img {
+  transform: scale(1.04);
+}
+
+.hhp-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (min-width: 640px) {
+  .hhp-card-body {
+    padding: 28px 28px 24px;
+  }
+}
+
+.hhp-card-title {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #221B16;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .hhp-card-title {
+    font-size: 26px;
+  }
+}
+
+.hhp-card-desc {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #554C44;
+  margin: 0 0 20px 0;
+  flex: 1;
+}
+
+/* Feature Badges (3 items) */
+.hhp-card-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(197, 160, 89, 0.25);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+  margin-bottom: 22px;
+}
+
+.hhp-tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #5A4E45;
+}
+
+.hhp-tag-icon {
+  color: #8C3A27;
+  flex-shrink: 0;
+}
+
+/* Card Button */
+.hhp-card-action {
+  display: flex;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   4. Section: Cottages of Bamboo — Crafted by Tradition
+   -------------------------------------------------------------------------- */
+.hhp-bamboo {
+  position: relative;
+  width: 100%;
+  background-color: #FAF5ED;
+  border-top: 1px solid rgba(197, 160, 89, 0.35);
+  overflow: hidden;
+}
+
+.hhp-bamboo-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .hhp-bamboo-inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height: 420px;
+  }
+}
+
+/* Left Image of Bamboo Cottages Row */
+.hhp-bamboo-img-col {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .hhp-bamboo-img-col {
+    min-height: 100%;
+  }
+}
+
+.hhp-bamboo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hhp-bamboo-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #FAF5ED 0%, transparent 15%, transparent 85%, #FAF5ED 100%);
+}
+
+@media (min-width: 900px) {
+  .hhp-bamboo-overlay {
+    background: linear-gradient(270deg, #FAF5ED 0%, rgba(250, 245, 237, 0.85) 10%, rgba(250, 245, 237, 0) 35%);
+  }
+}
+
+/* Right Content Column */
+.hhp-bamboo-content {
+  position: relative;
+  padding: 48px 24px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .hhp-bamboo-content {
+    padding: 60px 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hhp-bamboo-content {
+    padding: 72px 56px 72px 40px;
+  }
+}
+
+/* Right Botanical Leaf Watermark */
+.hhp-leaf-right {
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  width: 110px;
+  height: 260px;
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+@media (min-width: 1280px) {
+  .hhp-leaf-right {
+    right: -20px;
+    width: 130px;
+    height: 300px;
+  }
+}

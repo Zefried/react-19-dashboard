@@ -1,7 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-parchment: #F7F3EB;
+    --color-parchment-light: #FBF8F2;
+    --color-parchment-dark: #ECE5D8;
+    --color-terracotta: #6E261A;
+    --color-terracotta-dark: #581D14;
+    --color-terracotta-light: #8A3324;
+    --color-forest: #1F281E;
+    --color-earth: #382D26;
+    --color-gold: #C5A059;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-parchment);
+    color: var(--color-earth);
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-serif-heading {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-sub {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
 }

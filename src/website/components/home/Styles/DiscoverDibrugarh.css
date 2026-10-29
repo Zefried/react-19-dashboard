@@ -1,0 +1,212 @@
+.dd1 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #121614;
+  padding: 64px 0 90px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .dd1 {
+    padding: 84px 0 110px 0;
+  }
+}
+
+/* Crisp 2x High-Resolution Background */
+.dd2 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 65% center;
+  opacity: 1;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .dd2 {
+    background-position: center right;
+  }
+}
+
+/* Adaptive Contrast Shield */
+.dd3 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 18, 14, 0.85) 0%,
+    rgba(14, 18, 14, 0.65) 45%,
+    rgba(14, 18, 14, 0.92) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .dd3 {
+    background: linear-gradient(
+      90deg,
+      rgba(14, 18, 14, 0.9) 0%,
+      rgba(14, 18, 14, 0.45) 45%,
+      transparent 72%
+    );
+  }
+}
+
+/* Botanical Leaf Accent on Left Margin */
+.dd-botanical-accent {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  width: 220px;
+  height: 80%;
+  max-height: 480px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.dd4 {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .dd4 {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dd4 {
+    padding: 0 32px;
+  }
+}
+
+/* Narrative content */
+.dd5 {
+  text-align: left;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+  .dd5 {
+    margin-bottom: 56px;
+  }
+}
+
+.dd6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  color: #E2D2BC;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.dd7 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.dd8 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 350;
+  font-size: 15.5px;
+  color: #F0EAE1;
+  line-height: 1.68;
+  margin-bottom: 28px;
+  max-width: 460px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.dd9 {
+  display: flex;
+  align-items: center;
+}
+
+/* Cream/Parchment Button */
+.dd-btn {
+  border-radius: 6px !important;
+  background-color: #F8F3E8 !important;
+  color: #261E18 !important;
+  padding: 12px 26px !important;
+  font-size: 15px !important;
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+  letter-spacing: 0.03em !important;
+  border: 1px solid rgba(214, 195, 168, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.dd-btn:hover {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 2x2 Featured Cards Showcase Grid */
+.dd10 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .dd10 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.dd11 {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: block;
+  background-color: #121614;
+  text-decoration: none;
+}
+
+.dd11:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(226, 214, 197, 0.4);
+}
+
+.dd12 {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 470 / 193;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dd11:hover .dd12 {
+  transform: scale(1.03);
+}
+
+/* Torn Paper Bottom Edge Transition */
+.dd-torn-edge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  pointer-events: none;
+  line-height: 0;
+}

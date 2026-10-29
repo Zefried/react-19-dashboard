@@ -1,4 +1,4 @@
-import { Home, Users, Settings, Sliders, Shield, Lock, Activity } from "lucide-react";
+import { Home, Users, Settings, Sliders, Shield, Lock, Activity, Mail, CalendarCheck } from "lucide-react";
 import type { Role } from "../Context/AuthContextValue";
 
 export type MenuItem = {
@@ -18,6 +18,16 @@ export const menus: Record<Role, MenuItem[]> = {
       name: "Overview",
       icon: Home,
       path: "/dashboard?tab=overview",
+    },
+    {
+      name: "Visit Enquiries",
+      icon: Mail,
+      path: "/dashboard?tab=visit-enquiries",
+    },
+    {
+      name: "Cottage Bookings",
+      icon: CalendarCheck,
+      path: "/dashboard?tab=cottage-bookings",
     },
     {
       name: "User Management",
@@ -52,6 +62,16 @@ export const menus: Record<Role, MenuItem[]> = {
       name: "Sub-Admin Hub",
       icon: Shield,
       path: "/dashboard?tab=overview",
+    },
+    {
+      name: "Visit Enquiries",
+      icon: Mail,
+      path: "/dashboard?tab=visit-enquiries",
+    },
+    {
+      name: "Cottage Bookings",
+      icon: CalendarCheck,
+      path: "/dashboard?tab=cottage-bookings",
     },
     {
       name: "Assigned Workflows",

@@ -1,0 +1,195 @@
+.hc1 {
+  width: 100%;
+  background-color: #FAF6EE;
+  padding: 72px 0 84px 0;
+  border-top: 1px solid #E8DFD1;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .hc1 {
+    padding: 84px 0 96px 0;
+  }
+}
+
+/* Botanical Line Accent on Left Edge */
+.hc-botanical-accent {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  height: 90%;
+  max-height: 520px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hc2 {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .hc2 {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hc2 {
+    padding: 0 32px;
+  }
+}
+
+.hc3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hc3 {
+    grid-template-columns: 4.8fr 7.2fr;
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hc3 {
+    grid-template-columns: 4.6fr 7.4fr;
+    gap: 56px;
+  }
+}
+
+/* Left Column: Narrative Content */
+.hc4 {
+  text-align: left;
+  max-width: 460px;
+}
+
+.hc5 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  color: #8C3A27;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.hc6 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(32px, 3.8vw, 48px);
+  line-height: 1.15;
+  color: #1F1915;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+/* Flourish Divider */
+.hc7 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: #8C4736;
+}
+
+.hc7-line {
+  width: 44px;
+  height: 1px;
+  background-color: #8C4736;
+  opacity: 0.65;
+}
+
+.hc7-icon {
+  width: 24px;
+  height: 14px;
+}
+
+.hc8 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15.5px;
+  color: #4C4037;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hc9 {
+  display: flex;
+  align-items: center;
+}
+
+/* Rectangular Terracotta Button matching mockup */
+.hc-btn {
+  border-radius: 6px !important;
+  background-color: #6A2216 !important;
+  color: #FAF6F0 !important;
+  padding: 12px 26px !important;
+  font-size: 15px !important;
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+  letter-spacing: 0.03em !important;
+  box-shadow: 0 2px 8px rgba(106, 34, 22, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.hc-btn:hover {
+  background-color: #551A10 !important;
+  box-shadow: 0 4px 14px rgba(106, 34, 22, 0.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Right Column: 2x2 Cottage Showcase Grid */
+.hc10 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 560px) {
+  .hc10 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hc10 {
+    gap: 18px;
+  }
+}
+
+.hc11 {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(35, 24, 16, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  background-color: #1A1613;
+}
+
+.hc11:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(35, 24, 16, 0.18);
+}
+
+.hc12 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hc11:hover .hc12 {
+  transform: scale(1.04);
+}
